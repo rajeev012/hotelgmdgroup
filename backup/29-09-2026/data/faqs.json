@@ -1,0 +1,52 @@
+[
+  {
+    "id": "how-to-book",
+    "question": "How can I book a room at a JMD Group hotel?",
+    "answer": "You can book a room through our website by selecting your preferred hotel, choosing your dates and room type, and completing the booking form. You may also contact us directly by phone or email for reservations."
+  },
+  {
+    "id": "modify-booking",
+    "question": "Can I modify my booking after confirmation?",
+    "answer": "Yes, booking modifications are subject to availability. Please contact the hotel directly or reach out to our reservations team with your booking reference number to request changes."
+  },
+  {
+    "id": "cancellation-policy",
+    "question": "What is the cancellation policy?",
+    "answer": "Most bookings can be cancelled free of charge up to 24 hours before the check-in date. Specific cancellation policies may vary by room type and rate plan. Please review the cancellation terms during booking."
+  },
+  {
+    "id": "airport-transfer",
+    "question": "Do your hotels provide airport transfers?",
+    "answer": "Select JMD Group hotels offer airport transfer services. Availability and charges may vary by property. Please contact the hotel directly or mention your requirement at the time of booking."
+  },
+  {
+    "id": "breakfast",
+    "question": "Is breakfast included in the room rate?",
+    "answer": "Breakfast inclusion depends on the room type and rate plan selected. Many of our properties offer packages that include complimentary breakfast. Please check the room details during booking."
+  },
+  {
+    "id": "id-required",
+    "question": "What identification is required at check-in?",
+    "answer": "All guests are required to present a valid government-issued photo ID at check-in. For foreign nationals, a valid passport and visa are required. This is in accordance with local regulations."
+  },
+  {
+    "id": "check-in-time",
+    "question": "What time is check-in?",
+    "answer": "Standard check-in time at JMD Group hotels is 2:00 PM (14:00). Early check-in may be available on request, subject to availability and possible additional charges."
+  },
+  {
+    "id": "check-out-time",
+    "question": "What time is check-out?",
+    "answer": "Standard check-out time is 12:00 PM (noon). Late check-out may be available on request, subject to availability and possible additional charges."
+  },
+  {
+    "id": "payment-methods",
+    "question": "What payment methods are accepted?",
+    "answer": "JMD Group hotels accept major credit cards, debit cards, UPI payments and cash. Accepted card networks typically include Visa, Mastercard and RuPay. Payment options may vary by property."
+  },
+  {
+    "id": "pets",
+    "question": "Are pets allowed at JMD Group hotels?",
+    "answer": "Pet policies vary by property. Please contact the specific hotel directly to enquire about their pet policy before making your reservation."
+  }
+]

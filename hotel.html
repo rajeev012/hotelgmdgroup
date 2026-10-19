@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel — JMD Group of Hotels</title>
+  <meta name="description" content="View hotel details, rooms, amenities, and book your stay at JMD Group of Hotels near Delhi Airport.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ============================================================
+       HOTEL DETAIL — LUXURY PRO TRAVEL AESTHETICS (SCOPED STYLES)
+       ============================================================ */
+    .hotel-detail {
+      padding-top: calc(var(--header-height-scrolled) + 16px);
+      background: #f8fafc;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+
+    /* Top Breadcrumb & Quick Actions Bar */
+    .hotel-detail__top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hotel-detail__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 0;
+    }
+
+    .hotel-detail__breadcrumb a {
+      color: #003580;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .hotel-detail__breadcrumb a:hover {
+      color: #006ce4;
+      text-decoration: underline;
+    }
+
+    .hotel-detail__breadcrumb-sep {
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    .hotel-detail__top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hotel-action-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #003580;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 4px rgba(0, 35, 80, 0.04);
+    }
+
+    .hotel-action-pill:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .hotel-action-pill.active {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fecaca;
+    }
+
+    .hotel-action-pill svg {
+      flex-shrink: 0;
+    }
+
+    /* Luxury Hotel Header Card */
+    .hotel-detail__header {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 26px 30px;
+      box-shadow: 0 10px 30px rgba(0, 35, 80, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hotel-detail__header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #febb02 0%, #003580 100%);
+    }
+
+    .hotel-detail__badges-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .badge-official {
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      color: #febb02;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      box-shadow: 0 2px 6px rgba(0, 35, 80, 0.2);
+    }
+
+    .badge-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: #ffb700;
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .badge-perk {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hotel-detail__title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hotel-detail__name {
+      font-family: var(--font-heading);
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #00224f;
+      margin: 0 0 10px 0;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+    }
+
+    .hotel-detail__location-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 16px;
+    }
+
+    .hotel-detail__address {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .hotel-detail__address svg {
+      color: #006ce4;
+      flex-shrink: 0;
+    }
+
+    .hotel-detail__map-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #006ce4;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .hotel-detail__transit-tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hotel-detail__header-cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .hotel-header-rating-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f8fafc;
+      padding: 8px 16px 8px 10px;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .hotel-header-rating-card:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .hotel-header-rating-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 35, 80, 0.25);
+      flex-shrink: 0;
+    }
+
+    .hotel-header-rating-text {
+      text-align: left;
+      line-height: 1.25;
+    }
+
+    .hotel-header-rating-label {
+      font-weight: 700;
+      font-size: 14px;
+      color: #00224f;
+    }
+
+    .hotel-header-rating-sub {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .btn-reserve-header {
+      background: #febb02;
+      color: #00224f;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(254, 187, 2, 0.4);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-reserve-header:hover {
+      background: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(254, 187, 2, 0.45);
+      color: #00224f;
+    }
+
+    /* Hero Gallery Mosaic Showcase */
+    .gallery {
+      margin: 0 0 24px 0;
+      position: relative;
+    }
+
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 235px 235px;
+      gap: 10px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 35, 80, 0.08);
+      background: #0f172a;
+    }
+
+    .gallery__item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: #0f172a;
+    }
+
+    .gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+    }
+
+    .gallery__item:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.92);
+    }
+
+    .gallery__hero-tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(0, 34, 79, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      z-index: 2;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery__hero-bottom-tag {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(16, 185, 129, 0.92);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .gallery__view-all-btn {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      color: #00224f;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 2;
+    }
+
+    .gallery__view-all-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      color: #003580;
+    }
+
+    /* Sticky Anchor Sub-Navigation Bar */
+    .hotel-sticky-nav {
+      position: sticky;
+      top: var(--header-height-scrolled);
+      z-index: 35;
+      background: #ffffff;
+      border-bottom: 2px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0, 35, 80, 0.05);
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .hotel-sticky-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 4px;
+    }
+
+    .hotel-sticky-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      padding: 10px 0;
+    }
+
+    .hotel-sticky-nav__links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hotel-sticky-nav__link {
+      padding: 8px 16px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #475569;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hotel-sticky-nav__link:hover {
+      color: #003580;
+      background: #f1f5f9;
+    }
+
+    .hotel-sticky-nav__link.active {
+      color: #003580;
+      background: #e8f2fd;
+      font-weight: 700;
+    }
+
+    .hotel-sticky-nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .hotel-sticky-nav__price {
+      text-align: right;
+      line-height: 1.15;
+    }
+
+    .hotel-sticky-nav__price-from {
+      font-size: 10.5px;
+      color: #64748b;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .hotel-sticky-nav__price-amount {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #003580;
+    }
+
+    .hotel-sticky-nav__btn {
+      background: #003580;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 8px 18px;
+      font-size: 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hotel-sticky-nav__btn:hover {
+      background: #00224f;
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+
+    /* VIP Direct Booking Perks Banner */
+    .hotel-perks-banner {
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      border-radius: 16px;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      border: 1px solid rgba(254, 187, 2, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 35, 80, 0.12);
+    }
+
+    .hotel-perks-banner__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hotel-perks-banner__icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(254, 187, 2, 0.15);
+      border: 1px solid rgba(254, 187, 2, 0.4);
+      color: #febb02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hotel-perks-banner__title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+
+    .hotel-perks-banner__desc {
+      font-size: 11.5px;
+      color: #cbd5e1;
+      margin-top: 2px;
+    }
+
+    /* Quick Property Facts Matrix (4 cards) */
+    .hotel-quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .hotel-quick-fact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 8px rgba(0, 35, 80, 0.03);
+      transition: all 0.2s ease;
+    }
+
+    .hotel-quick-fact-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 16px rgba(0, 35, 80, 0.06);
+    }
+
+    .hotel-quick-fact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: #006ce4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hotel-quick-fact-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hotel-quick-fact-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 3px;
+    }
+
+    /* Main Content Sections */
+    .hotel-info {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+      padding: 0 0 var(--space-2xl) 0;
+      align-items: start;
+    }
+
+    .hotel-info__main {
+      min-width: 0;
+    }
+
+    .info-section {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 35, 80, 0.04);
+      margin-bottom: 24px;
+      border-bottom: none;
+    }
+
+    .info-section__title {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #00224f;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .info-section__title span.section-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: #006ce4;
+      background: #eff6ff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: var(--font-body);
+    }
+
+    /* Key highlights tags */
+    .property-highlights-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .property-highlight-pill {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      color: #334155;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .property-highlight-pill svg {
+      color: #059669;
+    }
+
+    /* Compact Luxury Room Cards */
+    .luxury-room-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px rgba(0, 35, 80, 0.04);
+      transition: all 0.2s ease;
+      display: grid;
+      grid-template-columns: 190px 1fr 190px;
+      align-items: stretch;
+    }
+
+    .luxury-room-card:hover {
+      border-color: #003580;
+      box-shadow: 0 8px 24px rgba(0, 35, 80, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .luxury-room-card__media {
+      position: relative;
+      overflow: hidden;
+      background: #0f172a;
+      min-height: 135px;
+    }
+
+    .luxury-room-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .luxury-room-card:hover .luxury-room-card__media img {
+      transform: scale(1.05);
+    }
+
+    .luxury-room-card__badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(0, 34, 79, 0.88);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .luxury-room-card__body {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      border-right: 1px solid #f1f5f9;
+    }
+
+    .luxury-room-card__name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #00224f;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .luxury-room-card__specs {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .luxury-room-card__spec-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 500;
+    }
+
+    .luxury-room-card__spec-item svg {
+      color: #006ce4;
+    }
+
+    .luxury-room-card__perks-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      margin-top: 4px;
+    }
+
+    .luxury-room-card__perk {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #047857;
+      white-space: nowrap;
+    }
+
+    .luxury-room-card__pricing {
+      padding: 14px 18px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+      gap: 4px;
+    }
+
+    .luxury-room-card__price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .luxury-room-card__old-price {
+      font-size: 11.5px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .luxury-room-card__save-tag {
+      background: #fef2f2;
+      color: #dc2626;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .luxury-room-card__price-val {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #003580;
+      line-height: 1;
+    }
+
+    .luxury-room-card__price-sub {
+      font-size: 10.5px;
+      color: #64748b;
+    }
+
+    .luxury-room-card__btn {
+      background: #003580;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      margin-top: 6px;
+    }
+
+    .luxury-room-card__btn:hover {
+      background: #00224f;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 35, 80, 0.2);
+    }
+
+    /* Amenities Grid Elevated */
+    .amenity-grid-lux {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .amenity-card-lux {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .amenity-card-lux:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 35, 80, 0.04);
+    }
+
+    .amenity-card-lux__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #006ce4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .amenity-card-lux__name {
+      font-weight: 600;
+      font-size: 13.5px;
+      color: #1e293b;
+    }
+
+    /* Location & Transit Grid */
+    .transit-grid-lux {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .transit-item-lux {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .transit-item-lux:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 35, 80, 0.04);
+    }
+
+    .transit-item-lux__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #006ce4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .transit-item-lux__name {
+      font-weight: 600;
+      font-size: 13.5px;
+      color: #1e293b;
+    }
+
+    .transit-item-lux__dist {
+      margin-left: auto;
+      font-size: 12px;
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Sticky Booking Sidebar */
+    .hotel-info__sidebar {
+      position: sticky;
+      top: calc(var(--header-height-scrolled) + 20px);
+    }
+
+    .lux-booking-sidebar {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 2px solid #febb02;
+      box-shadow: 0 12px 40px rgba(0, 35, 80, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lux-booking-sidebar__header {
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      margin: -24px -24px 20px -24px;
+      padding: 14px 22px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lux-booking-sidebar__header-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: #febb02;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lux-booking-sidebar__promo-badge {
+      background: #febb02;
+      color: #00224f;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .lux-booking-sidebar__price-box {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .lux-booking-sidebar__old-rate {
+      font-size: 13px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .lux-booking-sidebar__amount {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #003580;
+      line-height: 1;
+    }
+
+    .lux-booking-sidebar__period {
+      font-size: 12px;
+      color: #64748b;
+      margin-left: 4px;
+    }
+
+    .lux-booking-sidebar__dates-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .lux-date-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 8px 12px;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lux-date-box:hover {
+      border-color: #003580;
+      background: #ffffff;
+    }
+
+    .lux-date-box__label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .lux-date-box__val {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lux-guests-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 16px;
+    }
+
+    .lux-guests-box:hover {
+      border-color: #003580;
+      background: #ffffff;
+    }
+
+    .lux-promo-strip {
+      background: #fefce8;
+      border: 1px dashed #ca8a04;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 16px;
+      font-size: 11.5px;
+      color: #854d0e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lux-promo-strip strong {
+      color: #003580;
+    }
+
+    .lux-perks-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #334155;
+    }
+
+    .lux-perk-check {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: #047857;
+    }
+
+    .btn-lux-primary {
+      width: 100%;
+      background: linear-gradient(135deg, #febb02 0%, #f59e0b 100%);
+      color: #00224f;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 4px 18px rgba(254, 187, 2, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-lux-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(254, 187, 2, 0.5);
+      color: #00224f;
+    }
+
+    .btn-lux-whatsapp {
+      width: 100%;
+      background: #25d366;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 11px 18px;
+      border-radius: 12px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 10px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-lux-whatsapp:hover {
+      background: #1eb956;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      color: #ffffff;
+    }
+
+    .pulse-dot-green {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+      display: inline-block;
+      animation: pulseGreen 1.8s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+
+    /* Policy Cards Grid */
+    .policy-grid-lux {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .policy-card-lux {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .policy-card-lux__head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #00224f;
+      margin-bottom: 6px;
+    }
+
+    .policy-card-lux__head svg {
+      color: #006ce4;
+    }
+
+    .policy-card-lux__text {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Mobile Sticky Bottom Bar (Strictly Hidden on Desktop) */
+    .hotel-mobile-bar {
+      display: none !important;
+    }
+
+    /* Responsive Adjustments Scoped to hotel.html */
+    @media (max-width: 1024px) {
+      .hotel-info {
+        grid-template-columns: 1fr;
+      }
+      .luxury-room-card {
+        grid-template-columns: 180px 1fr 180px;
+      }
+      .hotel-sticky-nav__cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hotel-detail__name {
+        font-size: 1.8rem;
+      }
+      .hotel-detail__header {
+        padding: 20px 18px;
+      }
+      .gallery__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 140px;
+      }
+      .gallery__item:first-child {
+        grid-column: 1 / -1;
+      }
+      .luxury-room-card {
+        grid-template-columns: 1fr;
+      }
+      .luxury-room-card__media {
+        min-height: 150px;
+        max-height: 170px;
+      }
+      .luxury-room-card__pricing {
+        text-align: left;
+        border-top: 1px solid #f1f5f9;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+      }
+      .luxury-room-card__btn {
+        width: auto;
+        margin-top: 0;
+        padding: 8px 18px;
+      }
+      .hotel-quick-facts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .transit-grid-lux {
+        grid-template-columns: 1fr;
+      }
+      .policy-grid-lux {
+        grid-template-columns: 1fr;
+      }
+      .hotel-mobile-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-top: 1px solid #e2e8f0;
+        padding: 12px 18px;
+        display: none !important;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 90;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+      }
+      .hotel-mobile-bar.visible {
+        display: flex !important;
+      }
+      .hotel-mobile-bar__price {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #003580;
+        line-height: 1;
+      }
+      .hotel-mobile-bar__sub {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 2px;
+      }
+      .hotel-mobile-bar__btn {
+        background: #febb02;
+        color: #00224f;
+        font-weight: 800;
+        font-size: 14px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        text-decoration: none;
+      }
+      .hotel-detail__header-cta {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hotel-detail {
+        padding-top: calc(var(--header-height-scrolled) + 8px);
+      }
+      .hotel-detail__name {
+        font-size: 1.5rem;
+      }
+      .hotel-quick-facts {
+        grid-template-columns: 1fr;
+      }
+      .hotel-perks-banner {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="JMD Group of Hotels - Home">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels Logo" class="header__logo-img">
+        <div class="header__logo-text">
+          JMD Group
+          <span>of Hotels</span>
+        </div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link header__nav-link--active">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <main class="hotel-detail" id="hotel-page">
+    <div class="container">
+      <!-- Breadcrumb Bar -->
+      <div class="hotel-detail__top-bar">
+        <div class="hotel-detail__breadcrumb" id="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="hotel-detail__breadcrumb-sep">›</span>
+          <a href="hotels.html">Hotels in Delhi NCR</a>
+          <span class="hotel-detail__breadcrumb-sep">›</span>
+          <span id="breadcrumb-name" style="color:#0f172a;font-weight:600">Hotel</span>
+        </div>
+        <div class="hotel-detail__top-actions">
+          <button type="button" class="hotel-action-pill" id="btn-share-hotel" title="Share this hotel">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share
+          </button>
+          <a href="hotels.html" class="hotel-action-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+            Back to all hotels
+          </a>
+        </div>
+      </div>
+
+      <!-- Elevated Header Card -->
+      <div class="hotel-detail__header" id="hotel-header">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Hero Gallery Mosaic -->
+      <div class="gallery" id="hotel-gallery">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sticky Anchor Sub-Nav -->
+      <nav class="hotel-sticky-nav" id="hotel-sticky-nav" aria-label="Hotel sections navigation">
+        <div class="hotel-sticky-nav__inner">
+          <div class="hotel-sticky-nav__links" id="sticky-nav-links">
+            <a href="#overview" class="hotel-sticky-nav__link active">Overview</a>
+            <a href="#perks-bar" class="hotel-sticky-nav__link">VIP Privileges</a>
+            <a href="#amenities" class="hotel-sticky-nav__link">Amenities</a>
+            <a href="#rooms" class="hotel-sticky-nav__link">Rooms &amp; Rates</a>
+            <a href="#location" class="hotel-sticky-nav__link">Location &amp; Airport</a>
+            <a href="#reviews" class="hotel-sticky-nav__link">Guest Reviews</a>
+            <a href="#policies" class="hotel-sticky-nav__link">Policies</a>
+          </div>
+          <div class="hotel-sticky-nav__cta">
+            <div class="hotel-sticky-nav__price">
+              <div class="hotel-sticky-nav__price-from">Direct Rate From</div>
+              <div class="hotel-sticky-nav__price-amount" id="sticky-nav-price">₹3,999</div>
+            </div>
+            <a href="#rooms" class="hotel-sticky-nav__btn">Choose Room</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- VIP Direct Booking Perks Banner -->
+      <div class="hotel-perks-banner" id="perks-bar">
+        <div class="hotel-perks-banner__item">
+          <div class="hotel-perks-banner__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="hotel-perks-banner__title">Best Price Guarantee</div>
+            <div class="hotel-perks-banner__desc">15% Cheaper than other sites</div>
+          </div>
+        </div>
+        <div class="hotel-perks-banner__item">
+          <div class="hotel-perks-banner__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div>
+            <div class="hotel-perks-banner__title">Free Airport Transfers</div>
+            <div class="hotel-perks-banner__desc">24/7 Dedicated shuttle to T1, T2 &amp; T3</div>
+          </div>
+        </div>
+        <div class="hotel-perks-banner__item">
+          <div class="hotel-perks-banner__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          </div>
+          <div>
+            <div class="hotel-perks-banner__title">High-Speed 5G Wi-Fi</div>
+            <div class="hotel-perks-banner__desc">Fast streaming &amp; business connectivity</div>
+          </div>
+        </div>
+        <div class="hotel-perks-banner__item">
+          <div class="hotel-perks-banner__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="hotel-perks-banner__title">Zero Booking Fee</div>
+            <div class="hotel-perks-banner__desc">Pay at hotel option available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Facts Matrix (4 cards) -->
+      <div class="hotel-quick-facts" id="quick-facts">
+        <div class="hotel-quick-fact-card">
+          <div class="hotel-quick-fact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="hotel-quick-fact-label">Check-in / Out</div>
+            <div class="hotel-quick-fact-val">2:00 PM / 12:00 PM</div>
+          </div>
+        </div>
+        <div class="hotel-quick-fact-card">
+          <div class="hotel-quick-fact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div>
+            <div class="hotel-quick-fact-label">Airport Proximity</div>
+            <div class="hotel-quick-fact-val">8 Mins to Terminal 3</div>
+          </div>
+        </div>
+        <div class="hotel-quick-fact-card">
+          <div class="hotel-quick-fact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          </div>
+          <div>
+            <div class="hotel-quick-fact-label">Dining &amp; Kitchen</div>
+            <div class="hotel-quick-fact-val">Multi-Cuisine &amp; 24/7 Dining</div>
+          </div>
+        </div>
+        <div class="hotel-quick-fact-card">
+          <div class="hotel-quick-fact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="hotel-quick-fact-label">Front Desk</div>
+            <div class="hotel-quick-fact-val">24/7 Concierge Service</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info + Sidebar Layout -->
+      <div class="hotel-info">
+        <div class="hotel-info__main" id="hotel-main">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="hotel-info__sidebar" id="hotel-sidebar">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Nearby JMD Hotels -->
+      <section class="section" id="nearby-hotels" style="padding-bottom:var(--space-4xl)">
+        <!-- Rendered by JS -->
+      </section>
+    </div>
+
+    <!-- Mobile Sticky Bottom Booking Bar -->
+    <div class="hotel-mobile-bar" id="hotel-mobile-bar">
+      <div>
+        <div class="hotel-mobile-bar__price" id="mobile-bar-price">₹3,999</div>
+        <div class="hotel-mobile-bar__sub">per night · Free Airport Shuttle</div>
+      </div>
+      <a href="#rooms" class="hotel-mobile-bar__btn">Choose Room</a>
+    </div>
+  </main>
+
+  <!-- RICH FOOTER (BOOKING.COM STYLE) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__trust-bar">
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Best Price Guarantee</div>
+            <div class="footer__trust-desc">Direct booking perks &amp; instant savings</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Free Airport Transfers</div>
+            <div class="footer__trust-desc">IGI Airport T1, T2 &amp; T3 connectivity</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">24/7 Front Desk</div>
+            <div class="footer__trust-desc">Round-the-clock concierge &amp; room service</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">100% Secure Booking</div>
+            <div class="footer__trust-desc">Instant confirmation · Zero hidden charges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" class="footer__logo-img">
+            <div>
+              <div class="footer__brand-title">JMD Group</div>
+              <span class="footer__brand-subtitle">of Hotels · New Delhi</span>
+            </div>
+          </div>
+          <p class="footer__description">JMD Group of Hotels offers premier hospitality experiences with handpicked boutique &amp; luxury properties near Indira Gandhi International Airport, Mahipalpur and Aerocity, New Delhi.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/919319366279" target="_blank" rel="noopener" class="footer__social-link" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.777.781 2.791.781 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.767-5.768-5.767zm7.545 5.766c-.001 4.159-3.385 7.544-7.545 7.544-1.29 0-2.529-.333-3.618-.948l-4.413 1.157 1.178-4.303c-.694-1.127-1.062-2.433-1.062-3.75 0-4.16 3.384-7.545 7.544-7.545 4.161.001 7.544 3.385 7.544 7.545z"/></svg>
+            </a>
+            <a href="tel:+919319366279" class="footer__social-link" aria-label="Call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="mailto:info@jmdgrouphotels.com" class="footer__social-link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Company</h4>
+          <a href="about.html" class="footer__link">About JMD Group</a>
+          <a href="hotels.html" class="footer__link">Our Hotels</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+          <a href="experiences.html" class="footer__link">Dining &amp; Experiences</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Destinations</h4>
+          <a href="hotels.html?destination=Mahipalpur" class="footer__link">Hotels near IGI Airport</a>
+          <a href="hotels.html?destination=Aerocity" class="footer__link">Aerocity Luxury Stays</a>
+          <a href="hotels.html?destination=Delhi" class="footer__link">South Delhi Hotels</a>
+          <a href="hotels.html" class="footer__link">All 7+ Properties</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">24/7 Assistance</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span><strong>Reservations &amp; Enquiries:</strong><br>+91-9319366279</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span>info@jmdgrouphotels.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>Mahipalpur, Near IGI Airport, New Delhi - 110037</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">© 2026 JMD Group of Hotels. All Rights Reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="my-booking.html" class="footer__bottom-link">Manage Booking</a>
+          <a href="faq.html" class="footer__bottom-link">FAQ</a>
+          <a href="contact.html" class="footer__bottom-link">Privacy Policy</a>
+          <a href="contact.html" class="footer__bottom-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <!-- Gallery Modal -->
+  <div class="gallery-modal" id="gallery-modal"></div>
+
+  <!-- Review Submission Modal -->
+  <div class="review-modal" id="review-modal" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+    <div class="review-modal__content">
+      <button class="review-modal__close" id="review-modal-close" aria-label="Close modal">&times;</button>
+      <h3 id="review-modal-title" style="font-family:var(--font-heading);font-size:var(--text-xl);margin-bottom:var(--space-xs)">Write a Review</h3>
+      <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-lg)">Share your stay experience with fellow travellers.</p>
+      
+      <form id="review-form">
+        <div style="margin-bottom:var(--space-md)">
+          <label style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:6px">Your Rating</label>
+          <div class="star-rating-input" id="star-picker">
+            <span data-star="1"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <span data-star="2"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <span data-star="3"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <span data-star="4"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <span data-star="5"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          </div>
+          <input type="hidden" id="review-score" name="score" value="5" required>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-md)">
+          <div>
+            <label for="review-author-name" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">Full Name *</label>
+            <input type="text" id="review-author-name" class="form-input" placeholder="e.g. Vikram Sharma" required>
+          </div>
+          <div>
+            <label for="review-author-location" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">City / Country *</label>
+            <input type="text" id="review-author-location" class="form-input" placeholder="e.g. Delhi, India" required>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-md)">
+          <div>
+            <label for="review-traveler-type" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">Traveler Type</label>
+            <select id="review-traveler-type" class="form-select">
+              <option value="business">Business</option>
+              <option value="couple">Couple</option>
+              <option value="family">Family</option>
+              <option value="solo">Solo Traveler</option>
+            </select>
+          </div>
+          <div>
+            <label for="review-room-type" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">Room Type Stayed</label>
+            <input type="text" id="review-room-type" class="form-input" placeholder="e.g. Deluxe Room">
+          </div>
+        </div>
+
+        <div style="margin-bottom:var(--space-md)">
+          <label for="review-title-input" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">Review Title *</label>
+          <input type="text" id="review-title-input" class="form-input" placeholder="e.g. Peaceful stay with friendly staff" required>
+        </div>
+
+        <div style="margin-bottom:var(--space-lg)">
+          <label for="review-comment-input" style="display:block;font-size:var(--text-xs);font-weight:600;text-transform:uppercase;margin-bottom:4px">Detailed Feedback *</label>
+          <textarea id="review-comment-input" class="form-input" rows="4" placeholder="Tell us about the room, cleanliness, food, location, and service..." required></textarea>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:var(--space-md)">
+          <button type="button" class="btn btn-outline" id="review-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      JMD.Search.init();
+      JMD.Booking.init();
+
+      const params = JMD.Utils.getURLParams();
+      const slug = params.slug || params.hotel || '';
+
+      if (!slug) {
+        document.getElementById('hotel-page').innerHTML = `
+          <div class="container" style="padding:100px 0;text-align:center">
+            <div style="width:64px;height:64px;border-radius:50%;background:#eff6ff;color:#003580;display:flex;align-items:center;justify-content:center;margin:0 auto 16px auto">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <h2 style="font-size:1.8rem;color:#00224f;margin-bottom:8px">No Hotel Selected</h2>
+            <p style="color:#64748b;margin-bottom:24px">Please choose a hotel from our verified properties collection.</p>
+            <a href="hotels.html" class="btn btn-primary">Browse All Hotels</a>
+          </div>
+        `;
+        return;
+      }
+
+      const hotel = await JMD.Data.getHotelBySlug(slug);
+      if (!hotel) {
+        document.getElementById('hotel-page').innerHTML = `
+          <div class="container" style="padding:100px 0;text-align:center">
+            <div style="width:64px;height:64px;border-radius:50%;background:#fef2f2;color:#dc2626;display:flex;align-items:center;justify-content:center;margin:0 auto 16px auto">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h2 style="font-size:1.8rem;color:#00224f;margin-bottom:8px">Hotel Not Found</h2>
+            <p style="color:#64748b;margin-bottom:24px">The requested hotel could not be found or may have moved.</p>
+            <a href="hotels.html" class="btn btn-primary">Explore Delhi Airport Hotels</a>
+          </div>
+        `;
+        return;
+      }
+
+      // Track recently viewed
+      JMD.RecentlyViewed.add(hotel.id);
+
+      // Page Title & Meta
+      document.title = `${hotel.name} — Luxury Stays near Delhi Airport | JMD Hotels`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = hotel.shortDescription || hotel.description || '';
+
+      // Breadcrumb Name
+      const breadcrumbEl = document.getElementById('breadcrumb-name');
+      if (breadcrumbEl) breadcrumbEl.textContent = hotel.name;
+
+      // Share button functionality
+      const shareBtn = document.getElementById('btn-share-hotel');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: `${hotel.name} — JMD Group of Hotels`,
+                text: `Check out ${hotel.name} near Delhi Airport. Direct booking saves 15%!`,
+                url: window.location.href
+              });
+            } catch (err) {
+              // User cancelled or not supported
+            }
+          } else {
+            navigator.clipboard.writeText(window.location.href);
+            JMD.Utils.showToast('Hotel link copied to clipboard!', 'success');
+          }
+        });
+      }
+
+      // Header Rendering
+      const headerEl = document.getElementById('hotel-header');
+      const isWished = JMD.Wishlist.has(hotel.id);
+      const ratingLabel = JMD.Utils.getRatingLabel(hotel.guestRating || 8.0);
+      const formattedPrice = hotel.priceFrom ? JMD.Utils.formatPrice(hotel.priceFrom) : '₹3,999';
+
+      headerEl.innerHTML = `
+        <div class="hotel-detail__badges-row">
+          <span class="badge-official">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            JMD Official Property
+          </span>
+          ${hotel.starRating ? `
+          <span class="badge-stars">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ffb700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></polygon></svg>
+            ${hotel.starRating}-Star Luxury Business
+          </span>` : ''}
+          <span class="badge-perk">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            Free Airport Shuttle Included
+          </span>
+          <span class="badge-perk" style="background:#fef3c7;color:#92400e;border-color:#fde68a">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Pay at Hotel Available
+          </span>
+        </div>
+
+        <div class="hotel-detail__title-row">
+          <div>
+            <h1 class="hotel-detail__name">${hotel.name}</h1>
+            <div class="hotel-detail__location-row">
+              <span class="hotel-detail__address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                ${hotel.location.address || (hotel.location.area + ', ' + hotel.location.city)}
+              </span>
+              <a href="#location" class="hotel-detail__map-jump" onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})">Show on map</a>
+              <span class="hotel-detail__transit-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                8 mins to Delhi Airport Terminal 3
+              </span>
+            </div>
+          </div>
+
+          <div class="hotel-detail__header-cta">
+            ${hotel.guestRating ? `
+            <div class="hotel-header-rating-card" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})" title="Click to view verified reviews">
+              <div class="hotel-header-rating-badge">${hotel.guestRating}</div>
+              <div class="hotel-header-rating-text">
+                <div class="hotel-header-rating-label">${ratingLabel}</div>
+                <div class="hotel-header-rating-sub">${hotel.reviewCount ? hotel.reviewCount.toLocaleString() : '840'} verified reviews</div>
+              </div>
+            </div>` : ''}
+            <button class="hotel-action-pill ${isWished ? 'active' : ''}" data-wishlist-id="${hotel.id}" onclick="JMD.Wishlist.toggle('${hotel.id}')" title="Save this hotel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="${isWished ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span>${isWished ? 'Saved' : 'Save'}</span>
+            </button>
+            <a href="#rooms" class="btn-reserve-header">
+              <span>Reserve Room</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      `;
+
+      // Hero Gallery Showcase
+      const galleryEl = document.getElementById('hotel-gallery');
+      const images = hotel.images && hotel.images.length > 0
+        ? hotel.images
+        : [JMD.Utils.placeholderImage(1200, 600, hotel.name)];
+
+      const galleryItems = images.slice(0, 5).map((img, i) => {
+        const isMain = i === 0;
+        const isLast = i === 4 || (i === images.length - 1 && i >= 1);
+        return `
+          <div class="gallery__item ${isMain ? 'gallery__item--main' : ''}" onclick="JMD.Gallery.open(${JSON.stringify(images).replace(/"/g, '&quot;')}, ${i})">
+            <img src="${img}" alt="${hotel.name} Photo ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}"
+              onerror="this.src=JMD.Utils.placeholderImage(800,500,'${hotel.name.replace(/'/g, "\\'")} Photo ${i+1}')">
+            ${isMain ? `
+              <div class="gallery__hero-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#febb02"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></polygon></svg>
+                Verified Luxury Property · Official Photos
+              </div>
+              <div class="gallery__hero-bottom-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                24/7 Airport Shuttle Available
+              </div>
+            ` : ''}
+            ${isLast ? `
+              <button class="gallery__view-all-btn" onclick="event.stopPropagation();JMD.Gallery.open(${JSON.stringify(images).replace(/"/g, '&quot;')}, 0)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <span>View All ${images.length} Photos</span>
+              </button>
+            ` : ''}
+          </div>
+        `;
+      });
+      galleryEl.innerHTML = `<div class="gallery__grid">${galleryItems.join('')}</div>`;
+
+      // Fetch Rooms & Amenities
+      const rooms = await JMD.Data.getRoomsByHotel(hotel.id);
+      const amenities = await JMD.Data.resolveAmenities(hotel.amenities || []);
+      const lowestPrice = rooms.length > 0
+        ? Math.min(...rooms.map(r => r.pricePerNight || Infinity))
+        : (hotel.priceFrom || 3999);
+
+      // Update Sticky Nav & Mobile Bar Price
+      const stickyPriceEl = document.getElementById('sticky-nav-price');
+      if (stickyPriceEl) stickyPriceEl.textContent = JMD.Utils.formatPrice(lowestPrice);
+      const mobilePriceEl = document.getElementById('mobile-bar-price');
+      if (mobilePriceEl) mobilePriceEl.textContent = JMD.Utils.formatPrice(lowestPrice);
+
+      // Main Content HTML Builder
+      const mainEl = document.getElementById('hotel-main');
+      let mainHTML = '';
+
+      // Section 1: Overview & About
+      mainHTML += `
+        <div class="info-section" id="overview">
+          <div class="info-section__title">
+            <span>About ${hotel.name}</span>
+            <span class="section-tag">Handpicked by JMD</span>
+          </div>
+          <p style="color:#334155;line-height:1.75;font-size:15px;margin-bottom:14px">
+            ${hotel.description || hotel.shortDescription || 'Experience premium comfort and unmatched convenience just minutes away from Delhi International Airport. Tailored for corporate executives, transit passengers, and leisure travelers.'}
+          </p>
+          <div class="property-highlights-row">
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              Soundproofed Quiet Rooms
+            </span>
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              Free 24/7 Airport Shuttle
+            </span>
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              High-Speed 5G Wi-Fi
+            </span>
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              Full Power Backup
+            </span>
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              Daily Sanitized Housekeeping
+            </span>
+            <span class="property-highlight-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              Multi-Cuisine In-Room Dining
+            </span>
+          </div>
+        </div>
+      `;
+
+      // Section 2: Amenities & Facilities
+      if (amenities.length > 0) {
+        const amenitySvgMap = {
+          'free-wifi': 'wifi', 'parking': 'parking', 'restaurant': 'restaurant',
+          'room-service': 'roomService', 'air-conditioning': 'ac', 'airport-transfer': 'airport',
+          'breakfast': 'breakfast', 'laundry': 'laundry', '24hr-reception': 'clock',
+          'conference-facilities': 'conference', 'gym': 'gym'
+        };
+
+        mainHTML += `
+          <div class="info-section" id="amenities">
+            <div class="info-section__title">
+              <span>Amenities &amp; Facilities</span>
+              <span class="section-tag">${amenities.length} Verified Inclusions</span>
+            </div>
+            <div class="amenity-grid-lux">
+              ${amenities.map(a => `
+                <div class="amenity-card-lux">
+                  <div class="amenity-card-lux__icon">
+                    ${JMD.Utils.getIcon(amenitySvgMap[a.id] || 'check', 20)}
+                  </div>
+                  <span class="amenity-card-lux__name">${a.name}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Section 3: Available Room Types & Rates
+      if (rooms.length > 0) {
+        mainHTML += `
+          <div class="info-section" id="rooms">
+            <div class="info-section__title">
+              <span>Available Room Types</span>
+              <span class="section-tag">Best Direct Rates Guaranteed</span>
+            </div>
+            <p style="color:#64748b;font-size:13.5px;margin-bottom:20px">
+              Direct booking includes complimentary airport transfer options, high-speed 5G Wi-Fi, and guaranteed sanitization.
+            </p>
+            <div class="rooms-container">
+              ${rooms.map((room, idx) => {
+                const roomImg = room.images && room.images.length > 0
+                  ? room.images[0]
+                  : (images[idx % images.length] || JMD.Utils.placeholderImage(500, 340, room.name));
+                const originalPrice = Math.round((room.pricePerNight || lowestPrice) * 1.25);
+                const discount = originalPrice - (room.pricePerNight || lowestPrice);
+
+                return `
+                  <div class="luxury-room-card">
+                    <div class="luxury-room-card__media">
+                      <img src="${roomImg}" alt="${room.name}" loading="lazy"
+                        onerror="this.src=JMD.Utils.placeholderImage(400,260,'${room.name.replace(/'/g, "\\'")}')">
+                      <span class="luxury-room-card__badge">${room.name}</span>
+                    </div>
+
+                    <div class="luxury-room-card__body">
+                      <div>
+                        <h3 class="luxury-room-card__name">${room.name}</h3>
+                        <div class="luxury-room-card__specs">
+                          <span class="luxury-room-card__spec-item">
+                            ${JMD.Utils.getIcon('bed', 13)} ${room.bedType || '1 King Bed'}
+                          </span>
+                          <span class="luxury-room-card__spec-item">
+                            ${JMD.Utils.getIcon('user', 13)} Up to ${room.maxGuests || 2} Guests
+                          </span>
+                          <span class="luxury-room-card__spec-item">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                            ${room.size || 32} ${room.sizeUnit || 'sqm'}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="luxury-room-card__perks-list">
+                        <span class="luxury-room-card__perk">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                          Free Airport Shuttle
+                        </span>
+                        <span class="luxury-room-card__perk">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                          Free 5G Wi-Fi
+                        </span>
+                        <span class="luxury-room-card__perk">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                          Free Cancellation
+                        </span>
+                        ${room.breakfastIncluded ? `
+                        <span class="luxury-room-card__perk" style="color:#0284c7">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                          Breakfast Included
+                        </span>` : `
+                        <span class="luxury-room-card__perk" style="color:#475569">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                          Soundproof Room
+                        </span>`}
+                      </div>
+                    </div>
+
+                    <div class="luxury-room-card__pricing">
+                      <div>
+                        <div class="luxury-room-card__price-row">
+                          <span class="luxury-room-card__old-price">${JMD.Utils.formatPrice(originalPrice)}</span>
+                          <span class="luxury-room-card__save-tag">SAVE 20%</span>
+                        </div>
+                        <div class="luxury-room-card__price-val">${JMD.Utils.formatPrice(room.pricePerNight)}<span style="font-size:12px;font-weight:500;color:#64748b">/night</span></div>
+                        <div class="luxury-room-card__price-sub">+ ₹${Math.round((room.pricePerNight || 3999) * 0.12)} taxes &amp; fees</div>
+                      </div>
+
+                      <button class="luxury-room-card__btn" onclick="JMD.App.selectRoom('${room.hotelId}', '${hotel.name.replace(/'/g, "\\'")}', '${room.id}', '${room.name.replace(/'/g, "\\'")}', ${room.pricePerNight || 0})">
+                        <span>Select Room</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Section 4: Location & Transit Matrix
+      mainHTML += `
+        <div class="info-section" id="location">
+          <div class="info-section__title">
+            <span>Location &amp; Airport Connectivity</span>
+            <span class="section-tag">Prime Aerocity Hub</span>
+          </div>
+          <p style="color:#475569;font-size:14px;margin-bottom:14px">
+            <strong>Address:</strong> ${hotel.location.address || (hotel.location.area + ', ' + hotel.location.city + ', ' + hotel.location.state + ' - 110037')}
+          </p>
+
+          <div class="transit-grid-lux">
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              </div>
+              <span class="transit-item-lux__name">IGI Airport Terminal 3 (International)</span>
+              <span class="transit-item-lux__dist">8 mins · 3.2 km</span>
+            </div>
+
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+              </div>
+              <span class="transit-item-lux__name">IGI Airport Terminal 1 (Domestic)</span>
+              <span class="transit-item-lux__dist">12 mins · 4.5 km</span>
+            </div>
+
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <span class="transit-item-lux__name">Delhi Aerocity Metro Station (Orange Line)</span>
+              <span class="transit-item-lux__dist">5 mins · 1.8 km</span>
+            </div>
+
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+              </div>
+              <span class="transit-item-lux__name">Worldmark Aerocity (Dining &amp; Shopping)</span>
+              <span class="transit-item-lux__dist">6 mins · 2.0 km</span>
+            </div>
+
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+              </div>
+              <span class="transit-item-lux__name">DLF Cyber City / Cyber Hub Gurugram</span>
+              <span class="transit-item-lux__dist">15 mins · 9.5 km</span>
+            </div>
+
+            <div class="transit-item-lux">
+              <div class="transit-item-lux__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span class="transit-item-lux__name">Qutub Minar &amp; South Delhi Hub</span>
+              <span class="transit-item-lux__dist">20 mins · 11 km</span>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;text-align:center">
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hotel.name + ' ' + (hotel.location.address || 'Mahipalpur Delhi'))}" target="_blank" rel="noopener" class="hotel-action-pill" style="display:inline-flex;padding:10px 20px;font-size:13.5px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Google Maps &amp; Get Directions
+            </a>
+          </div>
+        </div>
+      `;
+
+      // Section 5: Guest Reviews Matrix
+      let hotelReviews = await JMD.Data.getReviewsByHotel(hotel.id);
+      const localReviews = JSON.parse(localStorage.getItem('jmd_local_reviews') || '[]');
+      const matchingLocal = localReviews.filter(r => r.hotelId === hotel.id);
+      hotelReviews = [...matchingLocal, ...hotelReviews];
+
+      const avgRating = hotelReviews.length > 0
+        ? (hotelReviews.reduce((sum, r) => sum + r.rating, 0) / hotelReviews.length).toFixed(1)
+        : (hotel.guestRating || 8.0);
+      const avgRatingLabel = JMD.Utils.getRatingLabel(parseFloat(avgRating));
+
+      function renderReviewItems(list) {
+        if (!list || list.length === 0) {
+          return '<div style="text-align:center;padding:var(--space-2xl);color:var(--color-text-secondary);background:var(--color-surface);border-radius:var(--radius-lg);border:1px solid var(--color-border-light)">No reviews match this filter.</div>';
+        }
+        return list.map(r => `
+          <article class="review-card" data-author-type="${r.authorType || 'all'}">
+            <div class="review-card__header">
+              <div class="review-author">
+                <div class="review-author__avatar">${(r.author || 'G').charAt(0).toUpperCase()}</div>
+                <div>
+                  <div class="review-author__name">${r.author || 'Verified Guest'}</div>
+                  <div class="review-author__location">${r.authorLocation || 'Guest'}</div>
+                </div>
+              </div>
+              <div class="review-card__score-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#ffb700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>${r.rating} / 10</span>
+              </div>
+            </div>
+            <div class="review-card__meta">
+              <span class="review-card__meta-item review-card__badge-verified" style="display:inline-flex;align-items:center;gap:4px">
+                ${JMD.Utils.getIcon('verified', 13)} Verified Stay
+              </span>
+              ${r.roomType ? `<span class="review-card__meta-item" style="display:inline-flex;align-items:center;gap:4px">${JMD.Utils.getIcon('bed', 13)} ${r.roomType}</span>` : ''}
+              ${r.stayDuration ? `<span class="review-card__meta-item" style="display:inline-flex;align-items:center;gap:4px">${JMD.Utils.getIcon('calendar', 13)} ${r.stayDuration}</span>` : ''}
+              <span class="review-card__meta-item" style="display:inline-flex;align-items:center;gap:4px">${JMD.Utils.getIcon('clock', 13)} ${JMD.Utils.formatDate(r.date)}</span>
+            </div>
+            <h3 class="review-card__title">${r.title || ''}</h3>
+            <p class="review-card__comment">${r.comment || ''}</p>
+          </article>
+        `).join('');
+      }
+
+      mainHTML += `
+        <div class="info-section" id="reviews">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg);flex-wrap:wrap;gap:var(--space-md)">
+            <div class="info-section__title" style="margin-bottom:0">
+              <span>Verified Guest Reviews</span>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btn-open-review-modal" style="border-radius:var(--radius-md);display:inline-flex;align-items:center;gap:6px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Write a Review
+            </button>
+          </div>
+
+          <div class="reviews-summary">
+            <div class="reviews-overall">
+              <div class="reviews-overall__score">${avgRating}</div>
+              <div class="reviews-overall__label">${avgRatingLabel}</div>
+              <div class="reviews-overall__count">Based on ${hotel.reviewCount ? (hotel.reviewCount + matchingLocal.length).toLocaleString() : hotelReviews.length} verified reviews</div>
+            </div>
+            <div class="reviews-breakdown">
+              <div class="reviews-category">
+                <div class="reviews-category__header">
+                  <span class="reviews-category__name">Cleanliness &amp; Sanitization</span>
+                  <span class="reviews-category__score">9.2 / 10</span>
+                </div>
+                <div class="reviews-progress"><div class="reviews-progress__bar" style="width:92%"></div></div>
+              </div>
+              <div class="reviews-category">
+                <div class="reviews-category__header">
+                  <span class="reviews-category__name">Staff &amp; Hospitality</span>
+                  <span class="reviews-category__score">9.0 / 10</span>
+                </div>
+                <div class="reviews-progress"><div class="reviews-progress__bar" style="width:90%"></div></div>
+              </div>
+              <div class="reviews-category">
+                <div class="reviews-category__header">
+                  <span class="reviews-category__name">Airport Proximity &amp; Location</span>
+                  <span class="reviews-category__score">9.5 / 10</span>
+                </div>
+                <div class="reviews-progress"><div class="reviews-progress__bar" style="width:95%"></div></div>
+              </div>
+              <div class="reviews-category">
+                <div class="reviews-category__header">
+                  <span class="reviews-category__name">Comfort &amp; Soundproofing</span>
+                  <span class="reviews-category__score">8.8 / 10</span>
+                </div>
+                <div class="reviews-progress"><div class="reviews-progress__bar" style="width:88%"></div></div>
+              </div>
+              <div class="reviews-category">
+                <div class="reviews-category__header">
+                  <span class="reviews-category__name">Value for Money</span>
+                  <span class="reviews-category__score">9.1 / 10</span>
+                </div>
+                <div class="reviews-progress"><div class="reviews-progress__bar" style="width:91%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-filter-bar">
+            <div class="reviews-filter-chips" id="review-chips">
+              <button class="reviews-chip reviews-chip--active" data-type="all">All Reviews (${hotelReviews.length})</button>
+              <button class="reviews-chip" data-type="business">Business</button>
+              <button class="reviews-chip" data-type="couple">Couples</button>
+              <button class="reviews-chip" data-type="family">Families</button>
+              <button class="reviews-chip" data-type="solo">Solo</button>
+            </div>
+          </div>
+
+          <div class="reviews-list" id="reviews-list">
+            ${renderReviewItems(hotelReviews)}
+          </div>
+        </div>
+      `;
+
+      // Section 6: Policies & FAQ
+      mainHTML += `
+        <div class="info-section" id="policies">
+          <div class="info-section__title">
+            <span>Hotel Policies &amp; Guidelines</span>
+            <span class="section-tag">Essential Info</span>
+          </div>
+
+          <div class="policy-grid-lux">
+            <div class="policy-card-lux">
+              <div class="policy-card-lux__head">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Check-in &amp; Check-out
+              </div>
+              <div class="policy-card-lux__text">
+                Check-in from <strong>2:00 PM</strong> | Check-out until <strong>12:00 PM</strong>.<br>
+                Early check-in and late check-out available upon request (subject to availability).
+              </div>
+            </div>
+
+            <div class="policy-card-lux">
+              <div class="policy-card-lux__head">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Identity Verification
+              </div>
+              <div class="policy-card-lux__text">
+                Government-issued photo ID (Aadhaar, Passport, Driving License) is required for all adult guests at the time of check-in. PAN cards are not accepted.
+              </div>
+            </div>
+
+            <div class="policy-card-lux">
+              <div class="policy-card-lux__head">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Cancellation &amp; Modifications
+              </div>
+              <div class="policy-card-lux__text">
+                Free cancellation up to <strong>24 hours prior to check-in</strong>. Bookings made under flexible tariff can be modified without penalty fees.
+              </div>
+            </div>
+
+            <div class="policy-card-lux">
+              <div class="policy-card-lux__head">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                Payment Options Accepted
+              </div>
+              <div class="policy-card-lux__text">
+                Visa, MasterCard, RuPay, UPI (Google Pay, PhonePe, Paytm), NetBanking, and Cash accepted. Pay at Hotel option available on select deals.
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      mainEl.innerHTML = mainHTML;
+
+      // Sidebar Rendering
+      const sidebarEl = document.getElementById('hotel-sidebar');
+      const originalStartingPrice = Math.round(lowestPrice * 1.25);
+
+      sidebarEl.innerHTML = `
+        <div class="lux-booking-sidebar">
+          <div class="lux-booking-sidebar__header">
+            <span class="lux-booking-sidebar__header-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#febb02"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></polygon></svg>
+              Direct Booking Deal
+            </span>
+            <span class="lux-booking-sidebar__promo-badge">15% OFF</span>
+          </div>
+
+          <div class="lux-booking-sidebar__price-box">
+            <div>
+              <div class="lux-booking-sidebar__old-rate">${JMD.Utils.formatPrice(originalStartingPrice)}</div>
+              <div style="display:flex;align-items:baseline">
+                <span class="lux-booking-sidebar__amount">${JMD.Utils.formatPrice(lowestPrice)}</span>
+                <span class="lux-booking-sidebar__period">/ night</span>
+              </div>
+            </div>
+            <span style="background:#ecfdf5;color:#047857;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase">Best Direct Rate</span>
+          </div>
+
+          <div class="lux-booking-sidebar__dates-group">
+            <div class="lux-date-box" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">
+              <div class="lux-date-box__label">Check-in</div>
+              <div class="lux-date-box__val">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                ${JMD.Search.state.checkin ? JMD.Utils.formatDateShort(JMD.Search.state.checkin) : 'Select date'}
+              </div>
+            </div>
+            <div class="lux-date-box" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">
+              <div class="lux-date-box__label">Check-out</div>
+              <div class="lux-date-box__val">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                ${JMD.Search.state.checkout ? JMD.Utils.formatDateShort(JMD.Search.state.checkout) : 'Select date'}
+              </div>
+            </div>
+          </div>
+
+          <div class="lux-guests-box" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">
+            <div class="lux-date-box__label">Guests &amp; Rooms</div>
+            <div class="lux-date-box__val">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              ${JMD.Search.getGuestsText()}
+            </div>
+          </div>
+
+          <div class="lux-promo-strip">
+            <span>Special Code <strong>WELCOME10</strong> Applied</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+
+          <div class="lux-perks-checklist">
+            <div class="lux-perk-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Airport Shuttle Pick-up &amp; Drop
+            </div>
+            <div class="lux-perk-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Instant Booking Confirmation via WhatsApp
+            </div>
+            <div class="lux-perk-check" style="color:#1e293b">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero Booking Fee · Pay at Hotel Option
+            </div>
+          </div>
+
+          <a href="#rooms" class="btn-lux-primary" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">
+            <span>Choose Room &amp; Book</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a href="https://wa.me/919319366279?text=Hello%20JMD%20Hotels,%20I%20am%20inquiring%20about%20staying%20at%20${encodeURIComponent(hotel.name)}" target="_blank" rel="noopener" class="btn-lux-whatsapp">
+            <span class="pulse-dot-green"></span>
+            ${JMD.Utils.getIcon('whatsapp', 16)}
+            <span>Chat on WhatsApp (Instant Reply)</span>
+          </a>
+
+          <div style="text-align:center;margin-top:14px;font-size:12px;color:#64748b">
+            Need phone assistance? Call <a href="tel:+919319366279" style="color:#003580;font-weight:700;text-decoration:none">+91-9319366279</a>
+          </div>
+        </div>
+      `;
+
+      // Nearby JMD Hotels
+      const allHotels = await JMD.Data.getHotels();
+      const nearbyHotels = allHotels.filter(h => h.id !== hotel.id).slice(0, 3);
+      const nearbySection = document.getElementById('nearby-hotels');
+      if (nearbySection && nearbyHotels.length > 0) {
+        nearbySection.innerHTML = `
+          <div style="text-align:center;margin-bottom:var(--space-2xl)">
+            <span class="section-label">More Luxury Properties</span>
+            <h2 class="section-title">Other JMD Hotels near Delhi Airport</h2>
+            <p class="section-subtitle">Explore more premium stays across Mahipalpur &amp; Aerocity</p>
+          </div>
+          <div class="grid grid-3">
+            ${nearbyHotels.map(h => JMD.App.renderFeaturedCard(h)).join('')}
+          </div>
+        `;
+      }
+
+      // Sticky Navigation Scrollspy & Active Tab Switching
+      const navLinks = document.querySelectorAll('#sticky-nav-links .hotel-sticky-nav__link');
+      const sections = ['overview', 'perks-bar', 'amenities', 'rooms', 'location', 'reviews', 'policies'];
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Show/hide mobile bottom bar (strictly on mobile devices <= 768px)
+        const mobileBar = document.getElementById('hotel-mobile-bar');
+        if (mobileBar) {
+          if (window.innerWidth <= 768 && scrollY > 350) {
+            mobileBar.classList.add('visible');
+          } else {
+            mobileBar.classList.remove('visible');
+          }
+        }
+
+        // Active link scrollspy
+        let currentSectionId = '';
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            const top = el.offsetTop - 140;
+            if (scrollY >= top) {
+              currentSectionId = id;
+            }
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+
+      // Review Filter Chips
+      const chips = document.querySelectorAll('#review-chips .reviews-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('reviews-chip--active'));
+          chip.classList.add('reviews-chip--active');
+          const type = chip.dataset.type;
+          const filtered = (type === 'all')
+            ? hotelReviews
+            : hotelReviews.filter(r => (r.authorType || '').toLowerCase() === type.toLowerCase());
+          document.getElementById('reviews-list').innerHTML = renderReviewItems(filtered);
+        });
+      });
+
+      // Review Modal & Form
+      const reviewModal = document.getElementById('review-modal');
+      const btnOpenReview = document.getElementById('btn-open-review-modal');
+      const btnCloseReview = document.getElementById('review-modal-close');
+      const btnCancelReview = document.getElementById('review-cancel-btn');
+      const reviewForm = document.getElementById('review-form');
+
+      if (btnOpenReview && reviewModal) {
+        btnOpenReview.addEventListener('click', () => {
+          reviewModal.classList.add('review-modal--open');
+        });
+      }
+
+      const closeReviewModal = () => {
+        if (reviewModal) reviewModal.classList.remove('review-modal--open');
+      };
+
+      if (btnCloseReview) btnCloseReview.addEventListener('click', closeReviewModal);
+      if (btnCancelReview) btnCancelReview.addEventListener('click', closeReviewModal);
+      if (reviewModal) {
+        reviewModal.addEventListener('click', (e) => {
+          if (e.target === reviewModal) closeReviewModal();
+        });
+      }
+
+      // Star picker
+      const stars = document.querySelectorAll('#star-picker span');
+      const scoreInput = document.getElementById('review-score');
+      let currentRating = 5;
+      const updateStarUI = (rating) => {
+        stars.forEach(s => {
+          const starVal = parseInt(s.dataset.star, 10);
+          if (starVal <= rating) {
+            s.classList.add('active');
+          } else {
+            s.classList.remove('active');
+          }
+        });
+      };
+      updateStarUI(currentRating);
+
+      stars.forEach(s => {
+        s.addEventListener('mouseenter', () => {
+          const val = parseInt(s.dataset.star, 10);
+          stars.forEach(st => {
+            if (parseInt(st.dataset.star, 10) <= val) st.classList.add('hovered');
+            else st.classList.remove('hovered');
+          });
+        });
+        s.addEventListener('mouseleave', () => {
+          stars.forEach(st => st.classList.remove('hovered'));
+        });
+        s.addEventListener('click', () => {
+          currentRating = parseInt(s.dataset.star, 10);
+          scoreInput.value = currentRating * 2;
+          updateStarUI(currentRating);
+        });
+      });
+
+      // Review form submit
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const newReview = {
+            id: 'rev-local-' + Date.now(),
+            hotelId: hotel.id,
+            author: document.getElementById('review-author-name').value.trim(),
+            authorLocation: document.getElementById('review-author-location').value.trim(),
+            authorType: document.getElementById('review-traveler-type').value,
+            rating: parseFloat(scoreInput.value) || 10,
+            title: document.getElementById('review-title-input').value.trim(),
+            comment: document.getElementById('review-comment-input').value.trim(),
+            roomType: document.getElementById('review-room-type').value.trim() || 'Standard Room',
+            stayDuration: 'Recent Stay',
+            date: new Date().toISOString().split('T')[0],
+            verifiedBooking: true,
+            ratings: { cleanliness: 9.0, service: 9.0, location: 9.0, comfort: 9.0, value: 9.0 }
+          };
+
+          const stored = JSON.parse(localStorage.getItem('jmd_local_reviews') || '[]');
+          stored.unshift(newReview);
+          localStorage.setItem('jmd_local_reviews', JSON.stringify(stored));
+
+          hotelReviews.unshift(newReview);
+          document.getElementById('reviews-list').innerHTML = renderReviewItems(hotelReviews);
+
+          chips.forEach(c => c.classList.toggle('reviews-chip--active', c.dataset.type === 'all'));
+          const allChip = document.querySelector('#review-chips [data-type="all"]');
+          if (allChip) allChip.textContent = `All Reviews (${hotelReviews.length})`;
+
+          reviewForm.reset();
+          currentRating = 5;
+          updateStarUI(currentRating);
+          closeReviewModal();
+
+          JMD.Utils.showToast('Thank you! Your review has been submitted.', 'success');
+        });
+      }
+
+      JMD.App.handleImageErrors();
+
+      // Scroll to rooms if hash
+      if (window.location.hash === '#rooms') {
+        setTimeout(() => {
+          const roomsEl = document.getElementById('rooms');
+          if (roomsEl) roomsEl.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

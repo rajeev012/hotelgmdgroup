@@ -1,0 +1,51 @@
+{
+  "brand": {
+    "name": "JMD Group of Hotels",
+    "shortName": "JMD Hotels",
+    "tagline": "Stay Better. Stay With JMD.",
+    "description": "Discover comfortable stays, convenient locations and warm hospitality across the JMD Group of Hotels.",
+    "logoUrl": "assets/brand/logo.svg",
+    "logoDarkUrl": "assets/brand/logo-dark.svg",
+    "faviconUrl": "assets/brand/favicon.svg",
+    "founded": null,
+    "headquarters": "New Delhi, India"
+  },
+  "contact": {
+    "phone": "+91-9319366279",
+    "email": "info@jmdgrouphotels.com",
+    "address": "Mahipalpur, New Delhi - 110037, India",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "pincode": "110037"
+  },
+  "social": {
+    "facebook": null,
+    "instagram": null,
+    "twitter": null,
+    "linkedin": null,
+    "youtube": null
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home", "href": "index.html" },
+      { "label": "Hotels", "href": "hotels.html" },
+      { "label": "About", "href": "about.html" },
+      { "label": "Offers", "href": "offers.html" },
+      { "label": "Experiences", "href": "experiences.html" },
+      { "label": "Contact", "href": "contact.html" }
+    ],
+    "utility": [
+      { "label": "My Booking", "href": "my-booking.html" },
+      { "label": "Favorites", "href": "favorites.html" }
+    ]
+  },
+  "footer": {
+    "about": "The JMD Group of Hotels offers comfortable and convenient hospitality across multiple properties in New Delhi, strategically located near the Indira Gandhi International Airport.",
+    "copyright": "© 2026 JMD Group of Hotels. All Rights Reserved."
+  },
+  "currency": "INR",
+  "currencySymbol": "₹",
+  "defaultCheckInTime": "14:00",
+  "defaultCheckOutTime": "12:00"
+}

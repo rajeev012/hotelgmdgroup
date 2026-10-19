@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — JMD Group of Hotels</title>
+  <meta name="description" content="Your booking request has been received. View your booking details and confirmation reference.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .confirmation { padding-top: calc(var(--header-height) + var(--space-3xl)); padding-bottom: var(--space-4xl); text-align: center; }
+    .confirmation__card { max-width: 700px; margin: 0 auto; background: var(--color-background); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-3xl); box-shadow: var(--shadow-lg); text-align: left; }
+    .confirmation__icon { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--color-success); color: #fff; font-size: 2.5rem; border-radius: var(--radius-full); margin: 0 auto var(--space-xl); }
+    .confirmation__ref { background: var(--color-surface); padding: var(--space-lg); border-radius: var(--radius-md); text-align: center; margin: var(--space-xl) 0; }
+    .confirmation__ref-code { font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide); color: var(--color-accent); }
+    .confirmation__row { display: flex; justify-content: space-between; padding: var(--space-sm) 0; font-size: var(--text-sm); border-bottom: 1px solid var(--color-border-light); }
+    .confirmation__row:last-child { border-bottom: none; }
+    .confirmation__actions { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-2xl); flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" style="height:44px;width:auto;object-fit:contain">
+        <div class="header__logo-text">JMD Group<span>of Hotels</span></div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <main class="confirmation">
+    <div class="container">
+      <div class="confirmation__card" id="confirmation-content">
+        <div class="confirmation__icon">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h1 style="text-align:center;font-family:var(--font-heading);font-size:var(--text-3xl);margin-bottom:var(--space-sm)">Booking Request Received</h1>
+        <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:var(--space-md)">Thank you for choosing JMD Group of Hotels.</p>
+        <div style="text-align:center;background:var(--color-surface);padding:var(--space-md);border-radius:var(--radius-md);margin-bottom:var(--space-xl);border-left:3px solid var(--color-accent)">
+          <p style="font-size:var(--text-xs);color:var(--color-accent);font-weight:700;margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:6px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            DEMONSTRATION BOOKING
+          </p>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin:0">This is a demonstration booking flow. Online reservation processing will be connected in the production version.</p>
+        </div>
+
+        <div class="confirmation__ref">
+          <p style="font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Booking Reference</p>
+          <div class="confirmation__ref-code" id="booking-ref">—</div>
+        </div>
+
+        <div id="booking-details" style="margin-top:var(--space-xl)">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="confirmation__actions">
+          <button class="btn btn-outline" onclick="window.print()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
+          </button>
+          <a id="view-in-my-booking-btn" href="my-booking.html" class="btn btn-outline">View in My Booking</a>
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = JMD.Utils.getURLParams();
+      const ref = params.ref;
+
+      document.getElementById('booking-ref').textContent = ref || 'N/A';
+      if (ref) {
+        const myBookingBtn = document.getElementById('view-in-my-booking-btn');
+        if (myBookingBtn) myBookingBtn.href = `my-booking.html?ref=${encodeURIComponent(ref)}`;
+      }
+
+      // Try to find booking details
+      JMD.Booking.init();
+      const summary = JMD.Booking.getBookingSummary();
+
+      const detailsEl = document.getElementById('booking-details');
+      detailsEl.innerHTML = `
+        <div class="confirmation__row"><span>Hotel</span><strong>${summary.hotelName || '—'}</strong></div>
+        <div class="confirmation__row"><span>Room</span><strong>${summary.roomName || '—'}</strong></div>
+        <div class="confirmation__row"><span>Check-in</span><strong>${summary.checkin ? JMD.Utils.formatDate(summary.checkin) : '—'}</strong></div>
+        <div class="confirmation__row"><span>Check-out</span><strong>${summary.checkout ? JMD.Utils.formatDate(summary.checkout) : '—'}</strong></div>
+        <div class="confirmation__row"><span>Duration</span><strong>${summary.nights} night${summary.nights !== 1 ? 's' : ''}</strong></div>
+        <div class="confirmation__row"><span>Guests</span><strong>${summary.adults} adult${summary.adults > 1 ? 's' : ''}${summary.children > 0 ? ', ' + summary.children + ' children' : ''}</strong></div>
+        <div class="confirmation__row"><span>Rooms</span><strong>${summary.rooms}</strong></div>
+        <div class="confirmation__row" style="margin-top:var(--space-md);padding-top:var(--space-md);border-top:2px solid var(--color-primary);font-size:var(--text-lg)">
+          <strong>Total</strong><strong>${JMD.Utils.formatPrice(summary.total)}</strong>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

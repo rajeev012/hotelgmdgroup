@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites — JMD Group of Hotels</title>
+  <meta name="description" content="View your saved favorite hotels from JMD Group of Hotels.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" style="height:44px;width:auto;object-fit:contain">
+        <div class="header__logo-text">JMD Group<span>of Hotels</span></div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link header__nav-link--active">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <div class="page-hero" style="background-image:linear-gradient(180deg, rgba(0, 27, 58, 0.85) 0%, rgba(0, 34, 79, 0.82) 50%, rgba(0, 27, 58, 0.95) 100%), url('assets/images/hotels/hotel-urban-luxury/room-1.jpg');padding:130px 0 75px 0">
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Favorites</span>
+      </div>
+      <h1 class="page-hero__title">Your Favorite Hotels</h1>
+      <p class="page-hero__subtitle">Hotels and stays saved to your personal shortlist.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:#f4f6fa;min-height:50vh">
+    <div class="container">
+      <div id="favorites-list" style="display:flex;flex-direction:column;gap:var(--space-lg)">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__bottom"><span class="footer__copyright">© 2026 JMD Group of Hotels. All Rights Reserved.</span></div></div></footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <script src="js/utils.js"></script><script src="js/data.js"></script><script src="js/wishlist.js"></script><script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const favoriteIds = JMD.Wishlist.getAll();
+      const list = document.getElementById('favorites-list');
+
+      if (favoriteIds.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state__icon" style="color:var(--color-primary);display:flex;align-items:center;justify-content:center">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="empty-state__title">No favorites yet</h3>
+            <p class="empty-state__text">Save hotels you love by clicking the heart button on any property card.</p>
+            <a href="hotels.html" class="btn btn-primary">Browse Hotels</a>
+          </div>
+        `;
+        return;
+      }
+
+      const allHotels = await JMD.Data.getHotels();
+      const favoriteHotels = favoriteIds
+        .map(id => allHotels.find(h => h.id === id))
+        .filter(Boolean);
+
+      if (favoriteHotels.length === 0) {
+        list.innerHTML = '<div class="empty-state"><h3 class="empty-state__title">No favorites found</h3><a href="hotels.html" class="btn btn-primary">Browse Hotels</a></div>';
+        return;
+      }
+
+      list.innerHTML = favoriteHotels.map(h => JMD.App.renderHotelCard(h)).join('');
+      JMD.App.handleImageErrors();
+    });
+  </script>
+</body>
+</html>

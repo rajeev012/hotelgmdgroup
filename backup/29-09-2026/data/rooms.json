@@ -1,0 +1,563 @@
+[
+  {
+    "id": "deluxe-room-grand-shalimar",
+    "hotelId": "hotel-grand-shalimar",
+    "name": "Deluxe Room",
+    "description": "Spacious deluxe room with modern furnishings, work desk, and city views.",
+    "images": [
+      "assets/images/official/1-DZHJh_pd.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 32,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3999,
+    "currency": "INR"
+  },
+  {
+    "id": "premium-room-grand-shalimar",
+    "hotelId": "hotel-grand-shalimar",
+    "name": "Premium Room",
+    "description": "Premium room with enhanced amenities, premium bedding, and extra space.",
+    "images": [
+      "assets/images/official/2-C-XXYfwc.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 38,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom",
+      "bathrobe",
+      "slippers"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 5499,
+    "currency": "INR"
+  },
+  {
+    "id": "suite-grand-shalimar",
+    "hotelId": "hotel-grand-shalimar",
+    "name": "Executive Suite",
+    "description": "Luxurious suite with separate living area, premium amenities and panoramic views.",
+    "images": [
+      "assets/images/official/3-nh661J8r.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 3,
+    "size": 55,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom",
+      "bathrobe",
+      "slippers",
+      "living-area",
+      "sofa"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 48 hours before check-in.",
+    "pricePerNight": 7999,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-kian",
+    "hotelId": "hotel-kian",
+    "name": "Standard Room",
+    "description": "Comfortable standard room with essential amenities for a pleasant stay.",
+    "images": [
+      "assets/images/official/4-BWkLDjze.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 22,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom",
+      "tea-coffee-maker"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2499,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-kian",
+    "hotelId": "hotel-kian",
+    "name": "Deluxe Room",
+    "description": "Upgraded room with additional space, work desk and premium bedding.",
+    "images": [
+      "assets/images/official/5-CNjgCDk_.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 28,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3499,
+    "currency": "INR"
+  },
+  {
+    "id": "premium-room-kian",
+    "hotelId": "hotel-kian",
+    "name": "Premium Room",
+    "description": "Best-in-class room with premium furnishings and comprehensive amenities.",
+    "images": [
+      "assets/images/official/6-BtNL6VAI.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 3,
+    "size": 35,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom",
+      "bathrobe"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 4499,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-urban-luxury",
+    "hotelId": "hotel-urban-luxury",
+    "name": "Standard Room",
+    "description": "Modern standard room with clean interiors and essential comforts.",
+    "images": [
+      "assets/images/official/1-BaRo1f3H.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 22,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom",
+      "tea-coffee-maker"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2799,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-urban-luxury",
+    "hotelId": "hotel-urban-luxury",
+    "name": "Deluxe Room",
+    "description": "Spacious deluxe room with modern décor, work desk and breakfast included.",
+    "images": [
+      "assets/images/official/2-DSunFIiX.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 30,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "safe",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3799,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-paradise",
+    "hotelId": "hotel-paradise-international",
+    "name": "Standard Room",
+    "description": "Clean and comfortable room with all basic amenities for a restful stay.",
+    "images": [
+      "assets/images/hotels/hotel-paradise-international/exterior.jpg"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 20,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2299,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-paradise",
+    "hotelId": "hotel-paradise-international",
+    "name": "Deluxe Room",
+    "description": "Upgraded room with additional space and enhanced amenities.",
+    "images": [
+      "assets/images/hotels/hotel-paradise-international/lobby.jpg"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 26,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3299,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-aerovilla",
+    "hotelId": "hotel-aerovilla",
+    "name": "Standard Room",
+    "description": "Well-appointed standard room ideal for transit and short stays.",
+    "images": [
+      "assets/images/official/img_5-dbmBjpxA.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 22,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom",
+      "tea-coffee-maker"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2599,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-aerovilla",
+    "hotelId": "hotel-aerovilla",
+    "name": "Deluxe Room",
+    "description": "Spacious deluxe room with contemporary interiors and premium bedding.",
+    "images": [
+      "assets/images/official/img_6-DzyNm6tj.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 28,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3599,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-palm-view",
+    "hotelId": "hotel-palm-view",
+    "name": "Standard Room",
+    "description": "Comfortable standard room with modern amenities for a pleasant stay.",
+    "images": [
+      "assets/images/official/1-vp0mat9t.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 20,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2199,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-palm-view",
+    "hotelId": "hotel-palm-view",
+    "name": "Deluxe Room",
+    "description": "Enhanced room with extra space and upgraded amenities.",
+    "images": [
+      "assets/images/official/2-BHVUxIwU.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 26,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3199,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-good-luck",
+    "hotelId": "hotel-good-luck",
+    "name": "Standard Room",
+    "description": "Clean and functional room with essential amenities for budget travellers.",
+    "images": [
+      "assets/images/official/1-DGhpQ-i6.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 18,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 1999,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-good-luck",
+    "hotelId": "hotel-good-luck",
+    "name": "Deluxe Room",
+    "description": "Upgraded room with more space and additional amenities.",
+    "images": [
+      "assets/images/official/2 (1)-BAgE6Lfm.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 24,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "tea-coffee-maker",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2799,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-grand-regency",
+    "hotelId": "hotel-grand-regency",
+    "name": "Standard Room",
+    "description": "Comfortable standard room with essential amenities.",
+    "images": [
+      "assets/images/official/5-DLfHUnGh.png"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 22,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom",
+      "tea-coffee-maker"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2399,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-grand-regency",
+    "hotelId": "hotel-grand-regency",
+    "name": "Deluxe Room",
+    "description": "Spacious room with enhanced furnishings and breakfast included.",
+    "images": [
+      "assets/images/official/6-CX82ux5_.png"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 28,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3399,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-opal-villa",
+    "hotelId": "opal-villa",
+    "name": "Standard Room",
+    "description": "Cosy room in a villa setting with modern comforts.",
+    "images": [
+      "assets/images/hotels/opal-villa/room-1.jpg"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 24,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom",
+      "tea-coffee-maker"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2899,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-opal-villa",
+    "hotelId": "opal-villa",
+    "name": "Deluxe Room",
+    "description": "Spacious villa room with premium amenities and a private atmosphere.",
+    "images": [
+      "assets/images/hotels/opal-villa/room-2.jpg"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 30,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 3899,
+    "currency": "INR"
+  },
+  {
+    "id": "standard-room-jmk",
+    "hotelId": "hotel-jmk",
+    "name": "Standard Room",
+    "description": "Practical and clean room with essential amenities.",
+    "images": [
+      "assets/images/hotels/hotel-jmk/room-1.jpg"
+    ],
+    "bedType": "1 Double Bed",
+    "maxGuests": 2,
+    "size": 20,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": false,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2099,
+    "currency": "INR"
+  },
+  {
+    "id": "deluxe-room-jmk",
+    "hotelId": "hotel-jmk",
+    "name": "Deluxe Room",
+    "description": "Enhanced room with better furnishings and more space.",
+    "images": [
+      "assets/images/hotels/hotel-jmk/exterior.jpg"
+    ],
+    "bedType": "1 King Bed",
+    "maxGuests": 2,
+    "size": 26,
+    "sizeUnit": "sqm",
+    "amenities": [
+      "free-wifi",
+      "air-conditioning",
+      "flat-screen-tv",
+      "minibar",
+      "tea-coffee-maker",
+      "work-desk",
+      "attached-bathroom"
+    ],
+    "breakfastIncluded": true,
+    "cancellationPolicy": "Free cancellation up to 24 hours before check-in.",
+    "pricePerNight": 2999,
+    "currency": "INR"
+  }
+]

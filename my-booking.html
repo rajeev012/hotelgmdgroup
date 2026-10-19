@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Booking — JMD Group of Hotels</title>
+  <meta name="description" content="Manage your booking at JMD Group of Hotels. Enter your booking reference to view or modify your reservation.">
+  <link rel="canonical" href="https://jmdgrouphotels.com/my-booking">
+  <link rel="icon" type="image/webp" href="assets/brand/logo.webp">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="JMD Group of Hotels - Home">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels Logo" class="header__logo-img">
+        <div class="header__logo-text">
+          JMD Group
+          <span>of Hotels</span>
+        </div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link header__nav-link--active">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link header__nav-link--active">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <div class="page-hero" style="background-image:linear-gradient(180deg, rgba(0, 27, 58, 0.85) 0%, rgba(0, 34, 79, 0.82) 50%, rgba(0, 27, 58, 0.95) 100%), url('assets/images/hotels/hotel-kian/lobby.jpg');padding:130px 0 75px 0">
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>My Booking</span>
+      </div>
+      <h1 class="page-hero__title">Manage Your Reservation</h1>
+      <p class="page-hero__subtitle">Retrieve your reservation details, check hotel directions or request modifications.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:#f4f6fa;min-height:50vh">
+    <div class="container container-narrow" style="max-width:620px">
+      <div style="background:#ffffff;padding:var(--space-2xl);border-radius:12px;box-shadow:0 4px 16px rgba(0,53,128,0.06);border:1px solid #e2e8f0">
+        <form id="find-booking-form">
+          <div class="form-group">
+            <label class="form-label" for="booking-ref">Booking Reference</label>
+            <input type="text" class="form-input" id="booking-ref" placeholder="e.g. JMD-DEMO-772910" style="text-transform:uppercase;font-weight:600">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-contact">Email Address or Phone Number</label>
+            <input type="text" class="form-input" id="booking-contact" placeholder="e.g. rajiv.sharma@example.com or 9876543210">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;background:#006ce4;font-weight:700">Find Booking</button>
+        </form>
+
+        <!-- Quick Demo Fill Helper Card -->
+        <div style="margin-top:20px;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:12px;padding:16px;font-size:13px;color:#003580">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <span style="font-weight:700;display:inline-flex;align-items:center;gap:6px;font-size:13.5px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Quick Test Demo Booking:
+            </span>
+            <button type="button" id="btn-autofill-demo" style="background:#003580;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 6px rgba(0,53,128,0.2)">
+              ⚡ 1-Click Load Demo Stay
+            </button>
+          </div>
+          <p style="margin:0 0 8px 0;font-size:12px;color:#475569">Click any chip below to auto-fill that field:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <button type="button" class="demo-chip-btn" data-fill="ref" data-val="JMD-DEMO-772910" style="background:#fff;border:1px solid #93c5fd;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:600;color:#003580;cursor:pointer">
+              Ref: JMD-DEMO-772910
+            </button>
+            <button type="button" class="demo-chip-btn" data-fill="contact" data-val="rajiv.sharma@example.com" style="background:#fff;border:1px solid #93c5fd;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:500;color:#003580;cursor:pointer">
+              Email: rajiv.sharma@example.com
+            </button>
+            <button type="button" class="demo-chip-btn" data-fill="contact" data-val="9876543210" style="background:#fff;border:1px solid #93c5fd;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:500;color:#003580;cursor:pointer">
+              Phone: 9876543210
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="booking-result" style="margin-top:var(--space-2xl)"></div>
+
+      <div style="text-align:center;margin-top:var(--space-2xl);padding:var(--space-md) var(--space-lg);background:#ffffff;border-radius:10px;border:1px solid #e2e8f0;display:flex;align-items:center;gap:12px">
+        <div style="color:#006ce4;display:flex;align-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </div>
+        <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin:0;text-align:left">
+          <strong>Need immediate assistance with your reservation?</strong> Call our 24/7 concierge at <a href="tel:+919319366279" style="color:#006ce4;font-weight:700">+91-9319366279</a> or chat on WhatsApp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RICH FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__trust-bar">
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="footer__trust-title">Best Price Guarantee</div><div class="footer__trust-desc">Direct booking perks &amp; instant savings</div></div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+          <div><div class="footer__trust-title">Free Airport Transfers</div><div class="footer__trust-desc">IGI Airport T1, T2 &amp; T3 connectivity</div></div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="footer__trust-title">24/7 Front Desk</div><div class="footer__trust-desc">Round-the-clock concierge &amp; room service</div></div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div><div class="footer__trust-title">100% Secure Booking</div><div class="footer__trust-desc">Instant confirmation · Zero hidden charges</div></div>
+        </div>
+      </div>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" class="footer__logo-img">
+            <div><div class="footer__brand-title">JMD Group</div><span class="footer__brand-subtitle">of Hotels · New Delhi</span></div>
+          </div>
+          <p class="footer__description">JMD Group of Hotels offers premier hospitality experiences with handpicked boutique &amp; luxury properties near Indira Gandhi International Airport, Mahipalpur and Aerocity, New Delhi.</p>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Company</h4>
+          <a href="about.html" class="footer__link">About JMD Group</a>
+          <a href="hotels.html" class="footer__link">Our Hotels</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__column-title">Destinations</h4>
+          <a href="hotels.html?destination=Mahipalpur" class="footer__link">Hotels near IGI Airport</a>
+          <a href="hotels.html?destination=Aerocity" class="footer__link">Aerocity Luxury Stays</a>
+          <a href="hotels.html?destination=Delhi" class="footer__link">South Delhi Hotels</a>
+        </div>
+        <div>
+          <h4 class="footer__column-title">24/7 Assistance</h4>
+          <div class="footer__contact-item"><span class="footer__contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>+91-9319366279</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>info@jmdgrouphotels.com</span></div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span class="footer__copyright">© 2026 JMD Group of Hotels. All Rights Reserved.</span></div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <script src="js/utils.js?v=20260930"></script>
+  <script src="js/data.js?v=20260930"></script>
+  <script src="js/booking.js?v=20260930"></script>
+  <script src="js/wishlist.js?v=20260930"></script>
+  <script src="js/app.js?v=20260930"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.JMD && JMD.Booking) {
+        JMD.Booking.init();
+      }
+
+      const FALLBACK_DEMO = {
+        bookingRef: 'JMD-DEMO-772910',
+        hotelId: 'hotel-grand-shalimar',
+        hotelName: 'Hotel Grand Shalimar',
+        roomId: 'deluxe',
+        roomName: 'Deluxe King Room',
+        checkin: '2026-10-05',
+        checkout: '2026-10-07',
+        adults: 2,
+        children: 0,
+        rooms: 1,
+        nights: 2,
+        pricePerNight: 2999,
+        subtotal: 5998,
+        taxes: 720,
+        total: 6718,
+        guest: {
+          firstName: 'Rajiv',
+          lastName: 'Sharma',
+          email: 'rajiv.sharma@example.com',
+          phone: '9876543210',
+          terminal: 'T3',
+          flightNumber: 'AI-102',
+          specialRequests: 'High floor quiet room preferred with early airport shuttle.'
+        },
+        bookedAt: '2026-09-30T10:00:00.000Z',
+        status: 'demo'
+      };
+
+      function displayBooking(booking) {
+        const resultEl = document.getElementById('booking-result');
+        const isCancelled = booking.status === 'cancelled';
+
+        resultEl.innerHTML = `
+          <div style="background:#ffffff;padding:var(--space-2xl);border-radius:12px;box-shadow:0 4px 16px rgba(0,53,128,0.06);border:1px solid #e2e8f0;animation:fadeIn 0.3s ease">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-xl);flex-wrap:wrap;gap:var(--space-md)">
+              <div style="display:flex;align-items:center;gap:var(--space-md)">
+                <div style="width:44px;height:44px;background:${isCancelled ? '#fee2e2' : '#e8fdf0'};color:${isCancelled ? '#dc2626' : '#166534'};display:flex;align-items:center;justify-content:center;border-radius:50%">
+                  ${isCancelled ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>'}
+                </div>
+                <div>
+                  <h3 style="font-size:var(--text-lg);font-weight:700;color:#00224f;margin:0">${isCancelled ? 'Booking Cancelled' : 'Booking Confirmed'}</h3>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:2px 0 0 0">Reference: <strong style="color:#003580">${booking.bookingRef}</strong></p>
+                </div>
+              </div>
+              <span class="card-badge" style="background:${isCancelled ? '#fee2e2' : '#e8fdf0'};color:${isCancelled ? '#dc2626' : '#166534'};border:1px solid currentColor;font-weight:700;padding:4px 12px;border-radius:20px;font-size:12px">
+                ${isCancelled ? 'Cancelled' : 'Confirmed'}
+              </span>
+            </div>
+            <div style="font-size:var(--text-sm)">
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Hotel</span><strong>${booking.hotelName || '—'}</strong></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Room</span><strong>${booking.roomName || '—'}</strong></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Check-in</span><strong>${booking.checkin ? JMD.Utils.formatDate(booking.checkin) : '—'}</strong></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Check-out</span><strong>${booking.checkout ? JMD.Utils.formatDate(booking.checkout) : '—'}</strong></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Guest</span><strong>${booking.guest ? booking.guest.firstName + ' ' + booking.guest.lastName : '—'}</strong></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-sm) 0;border-bottom:1px solid var(--color-border-light)"><span>Email / Phone</span><span>${booking.guest ? (booking.guest.email || '') + (booking.guest.phone ? ' · ' + booking.guest.phone : '') : '—'}</span></div>
+              <div style="display:flex;justify-content:space-between;padding:var(--space-md) 0;margin-top:var(--space-sm);border-top:2px solid #003580;font-size:var(--text-md)"><strong>Total Amount</strong><strong style="color:#003580">${JMD.Utils.formatPrice(booking.total)}</strong></div>
+            </div>
+
+            <div style="display:flex;gap:var(--space-md);margin-top:var(--space-xl);justify-content:flex-end;flex-wrap:wrap">
+              <button class="btn btn-outline btn-sm" onclick="window.print()">Print Receipt</button>
+              ${!isCancelled ? `<button class="btn btn-outline btn-sm" id="btn-cancel-booking" style="color:var(--color-error);border-color:var(--color-error)">Cancel Booking</button>` : ''}
+              <a href="hotels.html" class="btn btn-primary btn-sm" style="background:#003580">Book Another Stay</a>
+            </div>
+          </div>
+        `;
+
+        const cancelBtn = document.getElementById('btn-cancel-booking');
+        if (cancelBtn) {
+          cancelBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to cancel this booking? This action cannot be undone.')) {
+              if (window.JMD && JMD.Booking) {
+                JMD.Booking.cancelDemoBooking(booking.bookingRef);
+              }
+              booking.status = 'cancelled';
+              JMD.Utils.showToast('Your booking has been cancelled successfully.', 'info');
+              displayBooking(booking);
+            }
+          });
+        }
+
+        resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function searchAndShowBooking(ref, contact) {
+        const cleanRef = (ref || '').trim();
+        const cleanContact = (contact || '').trim();
+
+        let booking = null;
+        if (window.JMD && JMD.Booking && typeof JMD.Booking.findDemoBooking === 'function') {
+          booking = JMD.Booking.findDemoBooking(cleanRef, cleanContact);
+        }
+
+        // Direct fallback matching
+        if (!booking) {
+          const testRef = cleanRef.toUpperCase();
+          const testContact = cleanContact.toLowerCase();
+          if (testRef.includes('772910') || testRef.includes('DEMO') || testContact.includes('rajiv') || testContact.includes('9876543210') || (!testRef && !testContact)) {
+            booking = FALLBACK_DEMO;
+          }
+        }
+
+        const resultEl = document.getElementById('booking-result');
+        if (booking) {
+          displayBooking(booking);
+        } else {
+          resultEl.innerHTML = `
+            <div style="text-align:center;padding:var(--space-2xl);background:#ffffff;border-radius:12px;border:1px solid #e2e8f0;animation:fadeIn 0.3s ease">
+              <div style="width:48px;height:48px;border-radius:50%;background:#e8f2fd;color:#006ce4;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-md) auto">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-sm);color:#00224f">Booking Not Found</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:16px">We couldn't find a booking matching "${cleanRef || cleanContact}".</p>
+              <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('btn-autofill-demo').click()">Click here to view Demo Booking</button>
+            </div>
+          `;
+        }
+      }
+
+      document.getElementById('find-booking-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const ref = document.getElementById('booking-ref').value;
+        const contact = document.getElementById('booking-contact').value;
+        searchAndShowBooking(ref, contact);
+      });
+
+      // Quick chip fill buttons
+      document.querySelectorAll('.demo-chip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const type = btn.getAttribute('data-fill');
+          const val = btn.getAttribute('data-val');
+          if (type === 'ref') {
+            document.getElementById('booking-ref').value = val;
+          } else {
+            document.getElementById('booking-contact').value = val;
+          }
+          JMD.Utils.showToast('Copied to field: ' + val, 'info');
+        });
+      });
+
+      // Quick Demo Autofill button
+      const autoFillBtn = document.getElementById('btn-autofill-demo');
+      if (autoFillBtn) {
+        autoFillBtn.addEventListener('click', () => {
+          document.getElementById('booking-ref').value = 'JMD-DEMO-772910';
+          document.getElementById('booking-contact').value = 'rajiv.sharma@example.com';
+          searchAndShowBooking('JMD-DEMO-772910', 'rajiv.sharma@example.com');
+          JMD.Utils.showToast('Demo booking loaded successfully!', 'success');
+        });
+      }
+
+      // Auto-populate from URL param if available
+      const urlParams = JMD.Utils.getURLParams();
+      if (urlParams.ref) {
+        document.getElementById('booking-ref').value = urlParams.ref;
+        searchAndShowBooking(urlParams.ref, '');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "free-wifi",
+    "name": "Free WiFi",
+    "icon": "wifi",
+    "category": "connectivity"
+  },
+  {
+    "id": "parking",
+    "name": "Free Parking",
+    "icon": "parking",
+    "category": "transport"
+  },
+  {
+    "id": "restaurant",
+    "name": "Restaurant",
+    "icon": "restaurant",
+    "category": "dining"
+  },
+  {
+    "id": "room-service",
+    "name": "Room Service",
+    "icon": "room-service",
+    "category": "dining"
+  },
+  {
+    "id": "air-conditioning",
+    "name": "Air Conditioning",
+    "icon": "ac",
+    "category": "comfort"
+  },
+  {
+    "id": "airport-transfer",
+    "name": "Airport Transfer",
+    "icon": "airport",
+    "category": "transport"
+  },
+  {
+    "id": "breakfast",
+    "name": "Breakfast",
+    "icon": "breakfast",
+    "category": "dining"
+  },
+  {
+    "id": "laundry",
+    "name": "Laundry",
+    "icon": "laundry",
+    "category": "services"
+  },
+  {
+    "id": "24hr-reception",
+    "name": "24-Hour Reception",
+    "icon": "reception",
+    "category": "services"
+  },
+  {
+    "id": "conference-facilities",
+    "name": "Conference Facilities",
+    "icon": "conference",
+    "category": "business"
+  },
+  {
+    "id": "gym",
+    "name": "Gym / Fitness Centre",
+    "icon": "gym",
+    "category": "wellness"
+  },
+  {
+    "id": "flat-screen-tv",
+    "name": "Flat-Screen TV",
+    "icon": "tv",
+    "category": "entertainment"
+  },
+  {
+    "id": "minibar",
+    "name": "Minibar",
+    "icon": "minibar",
+    "category": "dining"
+  },
+  {
+    "id": "safe",
+    "name": "In-Room Safe",
+    "icon": "safe",
+    "category": "security"
+  },
+  {
+    "id": "tea-coffee-maker",
+    "name": "Tea / Coffee Maker",
+    "icon": "coffee",
+    "category": "dining"
+  },
+  {
+    "id": "work-desk",
+    "name": "Work Desk",
+    "icon": "desk",
+    "category": "business"
+  },
+  {
+    "id": "attached-bathroom",
+    "name": "Attached Bathroom",
+    "icon": "bathroom",
+    "category": "comfort"
+  },
+  {
+    "id": "bathrobe",
+    "name": "Bathrobe",
+    "icon": "bathrobe",
+    "category": "comfort"
+  },
+  {
+    "id": "slippers",
+    "name": "Slippers",
+    "icon": "slippers",
+    "category": "comfort"
+  },
+  {
+    "id": "living-area",
+    "name": "Living Area",
+    "icon": "living",
+    "category": "comfort"
+  },
+  {
+    "id": "sofa",
+    "name": "Sofa",
+    "icon": "sofa",
+    "category": "comfort"
+  }
+]

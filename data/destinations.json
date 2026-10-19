@@ -1,0 +1,67 @@
+[
+  {
+    "id": "new-delhi",
+    "name": "New Delhi",
+    "type": "city",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 10,
+    "image": "assets/images/destinations/new-delhi.jpg",
+    "description": "India's capital city, home to historic monuments, vibrant culture and modern infrastructure."
+  },
+  {
+    "id": "mahipalpur",
+    "name": "Mahipalpur",
+    "type": "area",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 10,
+    "image": "assets/images/destinations/mahipalpur.jpg",
+    "description": "A bustling hospitality hub near IGI Airport, offering convenient stays for business and transit travellers."
+  },
+  {
+    "id": "aerocity",
+    "name": "Aerocity",
+    "type": "area",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 10,
+    "image": "assets/images/destinations/aerocity.jpg",
+    "description": "Delhi's premium hospitality district adjacent to IGI Airport, featuring dining, shopping and world-class hotels."
+  },
+  {
+    "id": "igi-airport",
+    "name": "IGI Airport",
+    "type": "landmark",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 10,
+    "image": "assets/images/destinations/igi-airport.jpg",
+    "description": "Indira Gandhi International Airport — India's busiest airport, serving domestic and international flights."
+  },
+  {
+    "id": "vasant-kunj",
+    "name": "Vasant Kunj",
+    "type": "area",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 2,
+    "image": "assets/images/destinations/vasant-kunj.jpg",
+    "description": "A well-planned residential and commercial area in South Delhi with proximity to the airport corridor."
+  },
+  {
+    "id": "rangpuri",
+    "name": "Rangpuri",
+    "type": "area",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "propertyCount": 1,
+    "image": "assets/images/destinations/rangpuri.jpg",
+    "description": "A locality near Mahipalpur along the Gurgaon-Delhi Expressway."
+  }
+]

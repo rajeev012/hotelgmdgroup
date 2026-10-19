@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Booking — JMD Group of Hotels</title>
+  <meta name="description" content="Complete your luxury hotel reservation with JMD Group of Hotels near Delhi Airport. Guaranteed lowest rate, free airport transfers & zero booking fee.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ============================================================
+       COMPLETE YOUR BOOKING — PRO TRAVEL CHECKOUT (SCOPED STYLES)
+       ============================================================ */
+    .booking-page {
+      padding-top: calc(var(--header-height-scrolled) + 16px);
+      padding-bottom: var(--space-4xl);
+      background: #f8fafc;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+
+    /* Top Breadcrumb Bar */
+    .checkout-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .checkout-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .checkout-breadcrumb a {
+      color: #003580;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .checkout-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .checkout-breadcrumb-sep {
+      color: #94a3b8;
+      font-size: 11px;
+    }
+
+    /* Modern 3-Step Booking Stepper */
+    .booking-stepper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0, 35, 80, 0.03);
+    }
+
+    .booking-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #64748b;
+    }
+
+    .booking-step__number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .booking-step__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .booking-step__subtitle {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+    }
+
+    .booking-step__title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .booking-step--done .booking-step__number {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .booking-step--active .booking-step__number {
+      background: #003580;
+      color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(0, 53, 128, 0.15);
+    }
+
+    .booking-step--active .booking-step__title {
+      color: #003580;
+    }
+
+    .booking-stepper__connector {
+      flex: 1;
+      height: 2px;
+      background: #e2e8f0;
+      margin: 0 20px;
+      max-width: 100px;
+    }
+
+    .booking-stepper__connector--active {
+      background: #10b981;
+    }
+
+    /* High-Trust Guarantees Ribbon */
+    .checkout-trust-ribbon {
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      border-radius: 14px;
+      padding: 14px 22px;
+      margin-bottom: 24px;
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      border: 1px solid rgba(254, 187, 2, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 35, 80, 0.08);
+    }
+
+    .checkout-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+    }
+
+    .checkout-trust-item svg {
+      color: #febb02;
+      flex-shrink: 0;
+    }
+
+    .checkout-trust-item strong {
+      color: #ffffff;
+    }
+
+    /* Booking Main Layout */
+    .booking-layout-pro {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* Checkout Card Containers */
+    .checkout-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 35, 80, 0.04);
+      padding: 24px 28px;
+      margin-bottom: 22px;
+    }
+
+    .checkout-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .checkout-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #00224f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .checkout-card__title-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #006ce4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .checkout-card__badge {
+      font-size: 11px;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: #047857;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    /* Form Fields Styling */
+    .checkout-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .checkout-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .checkout-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .checkout-label .required-star {
+      color: #dc2626;
+      margin-left: 3px;
+    }
+
+    .checkout-input, .checkout-select, .checkout-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #1e293b;
+      background: #ffffff;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .checkout-input:focus, .checkout-select:focus, .checkout-textarea:focus {
+      outline: none;
+      border-color: #003580;
+      box-shadow: 0 0 0 3px rgba(0, 53, 128, 0.12);
+      background: #ffffff;
+    }
+
+    .checkout-input-hint {
+      font-size: 11.5px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Airport Shuttle Coordination Box */
+    .shuttle-box {
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .shuttle-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .shuttle-checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: #047857;
+      cursor: pointer;
+    }
+
+    .shuttle-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #065f46;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .shuttle-desc {
+      font-size: 12px;
+      color: #166534;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .shuttle-fields-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #86efac;
+    }
+
+    /* Payment Preference Options */
+    .payment-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .payment-option-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .payment-option-card.selected {
+      border-color: #003580;
+      background: #f8fafc;
+      box-shadow: 0 4px 14px rgba(0, 53, 128, 0.08);
+    }
+
+    .payment-option-radio {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #00224f;
+      margin-bottom: 6px;
+    }
+
+    .payment-option-radio input {
+      accent-color: #003580;
+    }
+
+    .payment-option-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+      padding-left: 24px;
+    }
+
+    .payment-option-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Free Cancellation Highlight Box */
+    .cancellation-guarantee-box {
+      background: #eff6ff;
+      border-left: 4px solid #006ce4;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cancellation-guarantee-box svg {
+      color: #006ce4;
+      flex-shrink: 0;
+    }
+
+    .cancellation-guarantee-box__text {
+      font-size: 12.5px;
+      color: #1e3a8a;
+      line-height: 1.45;
+    }
+
+    /* Confirm CTA Button */
+    .btn-complete-booking {
+      background: linear-gradient(135deg, #febb02 0%, #f59e0b 100%);
+      color: #00224f;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 12px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(254, 187, 2, 0.4);
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-complete-booking:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(254, 187, 2, 0.5);
+      background: #f59e0b;
+      color: #00224f;
+    }
+
+    /* Right Column: Sticky Booking Summary Card */
+    .checkout-sidebar {
+      position: sticky;
+      top: calc(var(--header-height-scrolled) + 20px);
+    }
+
+    .summary-ticket-card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 2px solid #febb02;
+      box-shadow: 0 12px 35px rgba(0, 35, 80, 0.1);
+      overflow: hidden;
+    }
+
+    .summary-ticket-card__header {
+      background: linear-gradient(135deg, #00224f 0%, #003580 100%);
+      padding: 14px 20px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .summary-ticket-card__header-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #febb02;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .summary-ticket-card__header-tag {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .summary-ticket-card__body {
+      padding: 22px;
+    }
+
+    /* Hotel & Room Snapshot */
+    .summary-hotel-snapshot {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .summary-hotel-img {
+      width: 80px;
+      height: 70px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #0f172a;
+    }
+
+    .summary-hotel-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .summary-hotel-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: #00224f;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .summary-room-name {
+      font-size: 13px;
+      color: #006ce4;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .summary-hotel-loc {
+      font-size: 11.5px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Stay Dates Box */
+    .summary-dates-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .summary-date-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .summary-date-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .summary-date-val {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .summary-date-sub {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .summary-duration-pill {
+      background: #e8f2fd;
+      color: #003580;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* Price Breakdown Rows */
+    .summary-price-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+    }
+
+    .summary-price-row {
+      display: flex;
+      justify-content: space-between;
+      color: #475569;
+    }
+
+    .summary-price-row strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .summary-price-row.discount-row {
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .summary-price-row.discount-row strong {
+      color: #047857;
+    }
+
+    .summary-promo-area {
+      margin: 14px 0;
+      padding-top: 14px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .summary-promo-form {
+      display: flex;
+      gap: 6px;
+    }
+
+    .summary-promo-input {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: inherit;
+    }
+
+    .summary-promo-btn {
+      background: #003580;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .summary-promo-btn:hover {
+      background: #00224f;
+    }
+
+    .summary-promo-chips {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .summary-promo-chip {
+      font-size: 10.5px;
+      font-weight: 600;
+      background: #fefce8;
+      border: 1px dashed #ca8a04;
+      color: #854d0e;
+      padding: 2px 7px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Total Price Section */
+    .summary-total-box {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 2px solid #003580;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .summary-total-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: #00224f;
+    }
+
+    .summary-total-sub {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .summary-total-amount {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #003580;
+      line-height: 1;
+    }
+
+    /* Trust & Security Badge Block */
+    .summary-trust-seals {
+      margin-top: 18px;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #475569;
+    }
+
+    .summary-trust-seal-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .summary-trust-seal-item svg {
+      color: #059669;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .booking-layout-pro {
+        grid-template-columns: 1fr;
+      }
+      .checkout-sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .booking-stepper {
+        padding: 12px;
+      }
+      .booking-step__subtitle {
+        display: none;
+      }
+      .booking-stepper__connector {
+        margin: 0 8px;
+      }
+      .checkout-card {
+        padding: 18px 16px;
+      }
+      .checkout-form-grid {
+        grid-template-columns: 1fr;
+      }
+      .payment-options-grid {
+        grid-template-columns: 1fr;
+      }
+      .shuttle-fields-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="JMD Group of Hotels - Home">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels Logo" class="header__logo-img">
+        <div class="header__logo-text">
+          JMD Group
+          <span>of Hotels</span>
+        </div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-1px;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <main class="booking-page">
+    <div class="container">
+      <!-- Top Breadcrumbs -->
+      <div class="checkout-top-bar">
+        <div class="checkout-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="checkout-breadcrumb-sep">›</span>
+          <a href="hotels.html">Hotels</a>
+          <span class="checkout-breadcrumb-sep">›</span>
+          <span style="font-weight:600;color:#0f172a">Complete Your Reservation</span>
+        </div>
+        <div style="font-size:12.5px;color:#047857;font-weight:700;display:flex;align-items:center;gap:6px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Official JMD Booking Protection</span>
+        </div>
+      </div>
+
+      <!-- Modern Stepper -->
+      <div class="booking-stepper">
+        <div class="booking-step booking-step--done">
+          <div class="booking-step__number">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="booking-step__text">
+            <span class="booking-step__subtitle">Step 1</span>
+            <span class="booking-step__title">Room Selected</span>
+          </div>
+        </div>
+        <div class="booking-stepper__connector booking-stepper__connector--active"></div>
+        <div class="booking-step booking-step--active">
+          <div class="booking-step__number">2</div>
+          <div class="booking-step__text">
+            <span class="booking-step__subtitle">Step 2</span>
+            <span class="booking-step__title">Guest &amp; Stay Details</span>
+          </div>
+        </div>
+        <div class="booking-stepper__connector"></div>
+        <div class="booking-step">
+          <div class="booking-step__number">3</div>
+          <div class="booking-step__text">
+            <span class="booking-step__subtitle">Step 3</span>
+            <span class="booking-step__title">Instant Confirmation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- High-Trust Guarantees Ribbon -->
+      <div class="checkout-trust-ribbon">
+        <div class="checkout-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Best Rate Guarantee:</strong> Direct Booking Privilege</span>
+        </div>
+        <div class="checkout-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          <span><strong>Free Airport Shuttle</strong> across IGI T1, T2 &amp; T3</span>
+        </div>
+        <div class="checkout-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span><strong>Free Cancellation</strong> up to 24h prior to check-in</span>
+        </div>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="booking-layout-pro">
+        <div>
+          <!-- Guest Details Form -->
+          <form id="booking-form">
+            <!-- Card 1: Guest Personal Information -->
+            <div class="checkout-card">
+              <div class="checkout-card__head">
+                <h2 class="checkout-card__title">
+                  <span class="checkout-card__title-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <span>Primary Guest Details</span>
+                </h2>
+                <span class="checkout-card__badge">Lead Guest</span>
+              </div>
+
+              <div class="checkout-form-grid">
+                <div class="checkout-form-group">
+                  <label class="checkout-label" for="first-name">
+                    <span>First Name<span class="required-star">*</span></span>
+                  </label>
+                  <input type="text" class="checkout-input" id="first-name" required placeholder="e.g. Rajiv">
+                </div>
+                <div class="checkout-form-group">
+                  <label class="checkout-label" for="last-name">
+                    <span>Last Name<span class="required-star">*</span></span>
+                  </label>
+                  <input type="text" class="checkout-input" id="last-name" required placeholder="e.g. Sharma">
+                </div>
+              </div>
+
+              <div class="checkout-form-grid">
+                <div class="checkout-form-group">
+                  <label class="checkout-label" for="email">
+                    <span>Email Address<span class="required-star">*</span></span>
+                  </label>
+                  <input type="email" class="checkout-input" id="email" required placeholder="e.g. rajiv@example.com">
+                  <span class="checkout-input-hint">Booking voucher &amp; GST tax invoice will be sent here.</span>
+                </div>
+                <div class="checkout-form-group">
+                  <label class="checkout-label" for="phone">
+                    <span>Mobile / WhatsApp Number<span class="required-star">*</span></span>
+                  </label>
+                  <input type="tel" class="checkout-input" id="phone" required placeholder="+91 98765 43210">
+                  <span class="checkout-input-hint">For airport shuttle coordination &amp; WhatsApp concierge.</span>
+                </div>
+              </div>
+
+              <div class="checkout-form-group">
+                <label class="checkout-label" for="country">Country / Region</label>
+                <select class="checkout-select" id="country">
+                  <option value="India" selected>India (+91)</option>
+                  <option value="United States">United States (+1)</option>
+                  <option value="United Kingdom">United Kingdom (+44)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (+971)</option>
+                  <option value="Canada">Canada (+1)</option>
+                  <option value="Australia">Australia (+61)</option>
+                  <option value="Singapore">Singapore (+65)</option>
+                  <option value="Germany">Germany (+49)</option>
+                  <option value="Other">Other Country</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Card 2: Airport Shuttle & Arrival Coordination -->
+            <div class="checkout-card">
+              <div class="checkout-card__head">
+                <h2 class="checkout-card__title">
+                  <span class="checkout-card__title-icon" style="background:#f0fdf4;color:#047857">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                  </span>
+                  <span>Airport Shuttle &amp; Stay Preferences</span>
+                </h2>
+                <span class="checkout-card__badge" style="background:#dbeafe;color:#1d4ed8">Complimentary</span>
+              </div>
+
+              <div class="shuttle-box">
+                <label class="shuttle-checkbox-label">
+                  <input type="checkbox" id="shuttle-checkbox" checked>
+                  <div>
+                    <div class="shuttle-title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                      I need complimentary Delhi Airport Transfer (Pick-up or Drop)
+                    </div>
+                    <div class="shuttle-desc">
+                      Complimentary 24/7 dedicated shuttle for JMD direct guests across IGI Terminal 1, Terminal 2 &amp; Terminal 3.
+                    </div>
+                  </div>
+                </label>
+
+                <div class="shuttle-fields-wrap" id="shuttle-details">
+                  <div class="checkout-form-group">
+                    <label class="checkout-label" style="font-size:11.5px">Arrival Terminal</label>
+                    <select class="checkout-select" id="arrival-terminal" style="padding:8px 10px;font-size:13px">
+                      <option value="T3">Terminal 3 (International/Domestic)</option>
+                      <option value="T1">Terminal 1 (Domestic / Indigo / SpiceJet)</option>
+                      <option value="T2">Terminal 2 (Domestic)</option>
+                    </select>
+                  </div>
+                  <div class="checkout-form-group">
+                    <label class="checkout-label" style="font-size:11.5px">Flight Number (Optional)</label>
+                    <input type="text" class="checkout-input" id="flight-number" placeholder="e.g. AI-102 / 6E-214" style="padding:8px 10px;font-size:13px;text-transform:uppercase">
+                  </div>
+                  <div class="checkout-form-group">
+                    <label class="checkout-label" style="font-size:11.5px">Estimated Flight Landing</label>
+                    <input type="text" class="checkout-input" id="flight-time" placeholder="e.g. 6:30 PM" style="padding:8px 10px;font-size:13px">
+                  </div>
+                </div>
+              </div>
+
+              <div class="checkout-form-group" style="margin-bottom:16px">
+                <label class="checkout-label" for="arrival-time">Expected Check-in Time</label>
+                <select class="checkout-select" id="arrival-time">
+                  <option value="14-18" selected>Standard Check-in (2:00 PM – 6:00 PM)</option>
+                  <option value="early">Early Check-in (Before 2:00 PM - Subject to availability)</option>
+                  <option value="18-22">Evening Arrival (6:00 PM – 10:00 PM)</option>
+                  <option value="22-02">Night Arrival (10:00 PM – 2:00 AM)</option>
+                  <option value="late">Late Night / Early Morning Transit (After 2:00 AM)</option>
+                </select>
+              </div>
+
+              <div class="checkout-form-group">
+                <label class="checkout-label" for="special-request">Special Requests &amp; Notes</label>
+                <textarea class="checkout-textarea" id="special-request" placeholder="Tell us if you need early check-in, non-smoking room, extra pillows, quiet room, baby crib, etc." rows="2"></textarea>
+              </div>
+            </div>
+
+            <!-- Card 3: Payment Method & Guarantee -->
+            <div class="checkout-card">
+              <div class="checkout-card__head">
+                <h2 class="checkout-card__title">
+                  <span class="checkout-card__title-icon" style="background:#fef3c7;color:#92400e">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  </span>
+                  <span>Payment Preference</span>
+                </h2>
+                <span class="checkout-card__badge" style="background:#fef3c7;color:#92400e">Zero Risk</span>
+              </div>
+
+              <div class="payment-options-grid">
+                <div class="payment-option-card selected" id="pay-hotel-card">
+                  <span class="payment-option-badge" style="background:#dcfce7;color:#15803d">Popular</span>
+                  <label class="payment-option-radio">
+                    <input type="radio" name="payment-method" value="pay_at_hotel" checked>
+                    <span>Pay at Hotel</span>
+                  </label>
+                  <div class="payment-option-desc">
+                    Pay with Cash, UPI (Google Pay, PhonePe, Paytm), or Cards upon check-in. No advance payment required today.
+                  </div>
+                </div>
+
+                <div class="payment-option-card" id="pay-online-card">
+                  <span class="payment-option-badge" style="background:#fef3c7;color:#92400e">Extra 5% Off</span>
+                  <label class="payment-option-radio">
+                    <input type="radio" name="payment-method" value="pay_online">
+                    <span>Pay Online / UPI</span>
+                  </label>
+                  <div class="payment-option-desc">
+                    Instant online confirmation via UPI, NetBanking, Credit or Debit Card with additional 5% direct prepay discount.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Free Cancellation Guarantee Notice -->
+              <div class="cancellation-guarantee-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="cancellation-guarantee-box__text">
+                  <strong>Risk-Free Direct Reservation:</strong> Free cancellation up to 24 hours before your check-in date. If your flight is delayed or plans change, there are zero cancellation fees.
+                </div>
+              </div>
+
+              <!-- Terms Checkbox -->
+              <div style="margin-bottom:20px">
+                <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:#334155;line-height:1.45">
+                  <input type="checkbox" id="terms-checkbox" required checked style="width:17px;height:17px;margin-top:2px;accent-color:#003580">
+                  <span>I agree to the <a href="contact.html" target="_blank" style="color:#003580;font-weight:700;text-decoration:underline">Booking Terms</a>, Privacy Policy, and understand that government photo ID is required at check-in.</span>
+                </label>
+              </div>
+
+              <!-- Confirm CTA Button -->
+              <button type="submit" class="btn-complete-booking" id="btn-submit-booking">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Confirm &amp; Complete Reservation</span>
+              </button>
+
+              <div style="text-align:center;margin-top:12px;font-size:11.5px;color:#64748b;display:flex;align-items:center;justify-content:center;gap:6px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Instant Confirmation · Zero Booking Fee · Guaranteed Reservation</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: Elevated Sticky Booking Summary -->
+        <div class="checkout-sidebar">
+          <div class="summary-ticket-card" id="booking-summary-container">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RICH FOOTER (BOOKING.COM STYLE) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__trust-bar">
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Best Price Guarantee</div>
+            <div class="footer__trust-desc">Direct booking perks &amp; instant savings</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Free Airport Transfers</div>
+            <div class="footer__trust-desc">IGI Airport T1, T2 &amp; T3 connectivity</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">24/7 Front Desk</div>
+            <div class="footer__trust-desc">Round-the-clock concierge &amp; room service</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">100% Secure Booking</div>
+            <div class="footer__trust-desc">Instant confirmation · Zero hidden charges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" class="footer__logo-img">
+            <div>
+              <div class="footer__brand-title">JMD Group</div>
+              <span class="footer__brand-subtitle">of Hotels · New Delhi</span>
+            </div>
+          </div>
+          <p class="footer__description">JMD Group of Hotels offers premier hospitality experiences with handpicked boutique &amp; luxury properties near Indira Gandhi International Airport, Mahipalpur and Aerocity, New Delhi.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/919319366279" target="_blank" rel="noopener" class="footer__social-link" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.777.781 2.791.781 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.767-5.768-5.767zm7.545 5.766c-.001 4.159-3.385 7.544-7.545 7.544-1.29 0-2.529-.333-3.618-.948l-4.413 1.157 1.178-4.303c-.694-1.127-1.062-2.433-1.062-3.75 0-4.16 3.384-7.545 7.544-7.545 4.161.001 7.544 3.385 7.544 7.545z"/></svg>
+            </a>
+            <a href="tel:+919319366279" class="footer__social-link" aria-label="Call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="mailto:info@jmdgrouphotels.com" class="footer__social-link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Company</h4>
+          <a href="about.html" class="footer__link">About JMD Group</a>
+          <a href="hotels.html" class="footer__link">Our Hotels</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+          <a href="experiences.html" class="footer__link">Dining &amp; Experiences</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Destinations</h4>
+          <a href="hotels.html?destination=Mahipalpur" class="footer__link">Hotels near IGI Airport</a>
+          <a href="hotels.html?destination=Aerocity" class="footer__link">Aerocity Luxury Stays</a>
+          <a href="hotels.html?destination=Delhi" class="footer__link">South Delhi Hotels</a>
+          <a href="hotels.html" class="footer__link">All 7+ Properties</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">24/7 Assistance</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span><strong>Reservations &amp; Enquiries:</strong><br>+91-9319366279</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span>info@jmdgrouphotels.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>Mahipalpur, Near IGI Airport, New Delhi - 110037</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">© 2026 JMD Group of Hotels. All Rights Reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="my-booking.html" class="footer__bottom-link">Manage Booking</a>
+          <a href="faq.html" class="footer__bottom-link">FAQ</a>
+          <a href="contact.html" class="footer__bottom-link">Privacy Policy</a>
+          <a href="contact.html" class="footer__bottom-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      JMD.Search.init();
+      JMD.Booking.init();
+
+      // Ensure booking state has valid hotel and room data
+      if (JMD.Booking.state.hotelId) {
+        const hotel = await JMD.Data.getHotelById(JMD.Booking.state.hotelId);
+        if (hotel) {
+          JMD.Booking.state.hotelName = hotel.name;
+          if (hotel.images && hotel.images.length > 0) {
+            JMD.Booking.state.hotelImage = hotel.images[0];
+          }
+          JMD.Booking.state.hotelLocation = hotel.location ? (hotel.location.area + ', ' + hotel.location.city) : 'Near Delhi Airport';
+        }
+        if (JMD.Booking.state.roomId) {
+          const room = await JMD.Data.getRoomById(JMD.Booking.state.roomId);
+          if (room) {
+            JMD.Booking.state.roomName = room.name;
+            JMD.Booking.state.pricePerNight = room.pricePerNight;
+          }
+        }
+        JMD.Booking.saveState();
+      } else {
+        // Fallback default for direct page visit
+        const allHotels = await JMD.Data.getHotels();
+        if (allHotels.length > 0) {
+          const defaultHotel = allHotels[0];
+          const rooms = await JMD.Data.getRoomsByHotel(defaultHotel.id);
+          const defaultRoom = rooms.length > 0 ? rooms[0] : null;
+          JMD.Booking.setRoom(
+            defaultHotel.id,
+            defaultHotel.name,
+            defaultRoom ? defaultRoom.id : 'deluxe',
+            defaultRoom ? defaultRoom.name : 'Deluxe Room',
+            defaultRoom ? defaultRoom.pricePerNight : defaultHotel.priceFrom
+          );
+          if (defaultHotel.images && defaultHotel.images.length > 0) {
+            JMD.Booking.state.hotelImage = defaultHotel.images[0];
+          }
+          JMD.Booking.state.hotelLocation = defaultHotel.location ? (defaultHotel.location.area + ', ' + defaultHotel.location.city) : 'Near Delhi Airport';
+
+          if (!JMD.Booking.state.checkin) {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            JMD.Booking.state.checkin = today.toISOString().split('T')[0];
+            JMD.Booking.state.checkout = tomorrow.toISOString().split('T')[0];
+          }
+          JMD.Booking.saveState();
+        }
+      }
+
+      // Render custom luxury booking summary
+      renderLuxuryBookingSummary();
+
+      // Shuttle toggle handler
+      const shuttleCheck = document.getElementById('shuttle-checkbox');
+      const shuttleDetails = document.getElementById('shuttle-details');
+      if (shuttleCheck && shuttleDetails) {
+        shuttleCheck.addEventListener('change', () => {
+          shuttleDetails.style.display = shuttleCheck.checked ? 'grid' : 'none';
+        });
+      }
+
+      // Payment option toggle
+      const payHotelCard = document.getElementById('pay-hotel-card');
+      const payOnlineCard = document.getElementById('pay-online-card');
+      const radios = document.querySelectorAll('input[name="payment-method"]');
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (radio.value === 'pay_at_hotel') {
+            payHotelCard.classList.add('selected');
+            payOnlineCard.classList.remove('selected');
+          } else {
+            payOnlineCard.classList.add('selected');
+            payHotelCard.classList.remove('selected');
+          }
+        });
+      });
+
+      // Handle booking submission
+      const bookingForm = document.getElementById('booking-form');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const selectedPayment = document.querySelector('input[name="payment-method"]:checked');
+          const isShuttleRequested = document.getElementById('shuttle-checkbox')?.checked || false;
+
+          const guest = {
+            firstName: document.getElementById('first-name').value.trim(),
+            lastName: document.getElementById('last-name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            country: document.getElementById('country').value,
+            specialRequest: document.getElementById('special-request').value.trim(),
+            arrivalTime: document.getElementById('arrival-time').value,
+            paymentMethod: selectedPayment ? selectedPayment.value : 'pay_at_hotel',
+            airportShuttle: isShuttleRequested ? {
+              requested: true,
+              terminal: document.getElementById('arrival-terminal')?.value || 'T3',
+              flightNumber: document.getElementById('flight-number')?.value.trim() || '',
+              flightTime: document.getElementById('flight-time')?.value.trim() || ''
+            } : { requested: false }
+          };
+
+          const booking = JMD.Booking.saveDemoBooking(guest);
+
+          // Redirect to confirmation page
+          window.location.href = `booking-confirmation.html?ref=${booking.bookingRef}`;
+        });
+      }
+    });
+
+    /**
+     * Render the elevated luxury booking summary ticket
+     */
+    function renderLuxuryBookingSummary() {
+      const container = document.getElementById('booking-summary-container');
+      if (!container) return;
+
+      const summary = JMD.Booking.getBookingSummary();
+      const hotelImg = summary.hotelImage || 'assets/images/official/1-DZHJh_pd.png';
+      const checkinDate = summary.checkin ? JMD.Utils.formatDate(summary.checkin) : 'Today';
+      const checkoutDate = summary.checkout ? JMD.Utils.formatDate(summary.checkout) : 'Tomorrow';
+      const nights = summary.nights || 1;
+      const hotelLoc = JMD.Booking.state.hotelLocation || 'Mahipalpur, Near IGI Airport';
+
+      container.innerHTML = `
+        <div class="summary-ticket-card__header">
+          <span class="summary-ticket-card__header-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#febb02"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></polygon></svg>
+            Your Reservation Summary
+          </span>
+          <span class="summary-ticket-card__header-tag">Direct Privilege</span>
+        </div>
+
+        <div class="summary-ticket-card__body">
+          <!-- Hotel Snapshot -->
+          <div class="summary-hotel-snapshot">
+            <div class="summary-hotel-img">
+              <img src="${hotelImg}" alt="${summary.hotelName || 'Hotel'}" onerror="this.src=JMD.Utils.placeholderImage(200,160,'Hotel')">
+            </div>
+            <div>
+              <div class="summary-hotel-name">${summary.hotelName || 'Hotel Grand Shalimar'}</div>
+              <div class="summary-room-name">${summary.roomName || 'Deluxe Room'}</div>
+              <div class="summary-hotel-loc">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                ${hotelLoc}
+              </div>
+            </div>
+          </div>
+
+          <!-- Stay Dates Ticket -->
+          <div class="summary-dates-box">
+            <div class="summary-date-col">
+              <span class="summary-date-label">Check-in</span>
+              <span class="summary-date-val">${checkinDate}</span>
+              <span class="summary-date-sub">From 2:00 PM</span>
+            </div>
+            <div class="summary-duration-pill">
+              ${nights} Night${nights > 1 ? 's' : ''}
+            </div>
+            <div class="summary-date-col">
+              <span class="summary-date-label">Check-out</span>
+              <span class="summary-date-val">${checkoutDate}</span>
+              <span class="summary-date-sub">Until 12:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Inclusions Highlights -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+            <span style="background:#ecfdf5;color:#047857;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:4px">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Airport Shuttle
+            </span>
+            <span style="background:#ecfdf5;color:#047857;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:4px">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              High-Speed 5G Wi-Fi
+            </span>
+            <span style="background:#ecfdf5;color:#047857;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:4px">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Cancellation
+            </span>
+          </div>
+
+          <!-- Price Breakdown -->
+          <div class="summary-price-breakdown">
+            <div class="summary-price-row">
+              <span>${JMD.Utils.formatPrice(summary.pricePerNight)} × ${nights} night${nights > 1 ? 's' : ''}${summary.rooms > 1 ? ' × ' + summary.rooms + ' rooms' : ''}</span>
+              <strong>${JMD.Utils.formatPrice(summary.subtotal)}</strong>
+            </div>
+
+            <div class="summary-price-row">
+              <span>Hotel Taxes &amp; GST (12% Included)</span>
+              <strong>${JMD.Utils.formatPrice(summary.taxes)}</strong>
+            </div>
+
+            <div class="summary-price-row">
+              <span>Airport Shuttle Pick-up &amp; Drop</span>
+              <strong style="color:#047857;text-transform:uppercase">FREE</strong>
+            </div>
+
+            ${summary.discount > 0 ? `
+            <div class="summary-price-row discount-row">
+              <span>Special Promo Discount (${summary.discountPercent}%)</span>
+              <strong>-${JMD.Utils.formatPrice(summary.discount)}</strong>
+            </div>` : ''}
+          </div>
+
+          <!-- Promo Code Box -->
+          <div class="summary-promo-area">
+            <div class="summary-promo-form">
+              <input type="text" id="promo-code-input" class="summary-promo-input" placeholder="Promo code (e.g. WELCOME10)" value="${summary.promoCode || ''}">
+              <button type="button" class="summary-promo-btn" id="btn-apply-promo">Apply</button>
+            </div>
+            <div class="summary-promo-chips">
+              <span class="summary-promo-chip" onclick="applyQuickPromo('WELCOME10')">Code: WELCOME10 (10% Off)</span>
+              <span class="summary-promo-chip" onclick="applyQuickPromo('EARLYBIRD')">EARLYBIRD (15% Off)</span>
+            </div>
+            <div id="promo-msg" style="font-size:11.5px;margin-top:6px;color:${summary.promoCode ? '#16a34a' : '#64748b'}">
+              ${summary.promoCode ? '✔ Applied: ' + summary.promoCode + ' (' + summary.discountPercent + '% off)' : ''}
+            </div>
+          </div>
+
+          <!-- Total Amount Box -->
+          <div class="summary-total-box">
+            <div>
+              <div class="summary-total-label">Total Payable</div>
+              <div class="summary-total-sub">Includes all taxes &amp; fees</div>
+            </div>
+            <div class="summary-total-amount">
+              ${JMD.Utils.formatPrice(summary.total)}
+            </div>
+          </div>
+
+          <!-- Trust & Security Seals -->
+          <div class="summary-trust-seals">
+            <div class="summary-trust-seal-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>256-Bit SSL Encrypted &amp; Verified Checkout</span>
+            </div>
+            <div class="summary-trust-seal-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Instant SMS &amp; WhatsApp Confirmation Voucher</span>
+            </div>
+            <div class="summary-trust-seal-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>24/7 Guest Assistance: +91-9319366279</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Re-attach promo button listener
+      const promoBtn = container.querySelector('#btn-apply-promo');
+      const promoInput = container.querySelector('#promo-code-input');
+      const promoMsg = container.querySelector('#promo-msg');
+
+      if (promoBtn && promoInput) {
+        promoBtn.addEventListener('click', () => {
+          const res = JMD.Booking.applyPromoCode(promoInput.value);
+          if (res.success) {
+            JMD.Utils.showToast(res.message, 'success');
+            renderLuxuryBookingSummary();
+          } else {
+            promoMsg.style.color = '#dc2626';
+            promoMsg.textContent = res.message;
+            JMD.Utils.showToast(res.message, 'error');
+          }
+        });
+      }
+    }
+
+    /**
+     * Quick promo helper
+     */
+    function applyQuickPromo(code) {
+      const res = JMD.Booking.applyPromoCode(code);
+      if (res.success) {
+        JMD.Utils.showToast(res.message, 'success');
+        renderLuxuryBookingSummary();
+      }
+    }
+  </script>
+</body>
+</html>

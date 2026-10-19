@@ -1,0 +1,786 @@
+[
+  {
+    "id": "hotel-grand-shalimar",
+    "slug": "hotel-grand-shalimar",
+    "name": "Hotel Grand Shalimar",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur Extension",
+      "state": "Delhi",
+      "country": "India",
+      "address": "A-51, NH-8, Mahipalpur Extension, New Delhi - 110037",
+      "latitude": 28.5528,
+      "longitude": 77.1128
+    },
+    "starRating": 4,
+    "guestRating": 7.8,
+    "reviewCount": 842,
+    "priceFrom": 3999,
+    "currency": "INR",
+    "shortDescription": "A premium 4-star business hotel near IGI Airport with modern conference facilities, restaurant and elegant rooms.",
+    "description": "Hotel Grand Shalimar by JMD Group is a distinguished 4-star property located in the heart of Mahipalpur, just minutes from Indira Gandhi International Airport. The hotel combines modern business amenities with warm hospitality, offering well-appointed rooms, a multi-cuisine restaurant, conference facilities and private parking. Ideal for business travellers, transit guests and those seeking a comfortable base to explore Delhi.",
+    "images": [
+      "assets/images/official/1-DZHJh_pd.png",
+      "assets/images/official/2-C-XXYfwc.png",
+      "assets/images/official/3-nh661J8r.png",
+      "assets/images/official/4-szvvCN3V.png",
+      "assets/images/official/5-DxcrSRD5.png",
+      "assets/images/official/6-Bl67CNeW.png",
+      "assets/images/official/7-D8dmtGnA.png",
+      "assets/images/official/8-uZ4LTNBb.png",
+      "assets/images/official/9-B1icSY_F.png",
+      "assets/images/official/10-DVyP-AiA.png",
+      "assets/images/official/11-CRZ9IHmM.png",
+      "assets/images/official/12-aPO4ov9t.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "restaurant",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "breakfast",
+      "laundry",
+      "24hr-reception",
+      "conference-facilities"
+    ],
+    "facilities": [
+      "restaurant",
+      "conference-hall",
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "deluxe-room-grand-shalimar",
+      "premium-room-grand-shalimar",
+      "suite-grand-shalimar"
+    ],
+    "reviewIds": [
+      "rev-gs-001",
+      "rev-gs-002",
+      "rev-gs-003"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      },
+      {
+        "name": "DLF Cyber City, Gurgaon",
+        "distance": "12 km",
+        "type": "business"
+      },
+      {
+        "name": "Qutub Minar",
+        "distance": "8 km",
+        "type": "attraction"
+      }
+    ],
+    "tags": [
+      "business",
+      "airport",
+      "premium"
+    ],
+    "featured": true,
+    "popular": true,
+    "badges": [
+      "Best Value"
+    ]
+  },
+  {
+    "id": "hotel-kian",
+    "slug": "hotel-kian",
+    "name": "Hotel Kian",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "L-316 & 317, NH-8, Mahipalpur, New Delhi - 110037",
+      "latitude": 28.5535,
+      "longitude": 77.1145
+    },
+    "starRating": 3,
+    "guestRating": 7.5,
+    "reviewCount": 1426,
+    "priceFrom": 2499,
+    "currency": "INR",
+    "shortDescription": "A popular 3-star hotel near IGI Airport offering well-equipped rooms, a restaurant and excellent connectivity.",
+    "description": "Hotel Kian by JMD Group is a well-regarded 3-star property strategically located on NH-8 in Mahipalpur. Known for its convenient proximity to IGI Airport and the Aerocity metro station, the hotel offers comfortable rooms, an in-house restaurant, a gym and reliable room service. A consistent favourite among business travellers and transit guests, Hotel Kian delivers dependable hospitality at great value.",
+    "images": [
+      "assets/images/official/1-DK0ULIim.png",
+      "assets/images/official/2-CRV0roDu.png",
+      "assets/images/official/3-CzXku8pO.png",
+      "assets/images/official/4-BWkLDjze.png",
+      "assets/images/official/5-CNjgCDk_.png",
+      "assets/images/official/6-BtNL6VAI.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "restaurant",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "breakfast",
+      "laundry",
+      "24hr-reception",
+      "gym"
+    ],
+    "facilities": [
+      "restaurant",
+      "gym",
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-kian",
+      "deluxe-room-kian",
+      "premium-room-kian"
+    ],
+    "reviewIds": [
+      "rev-kn-001",
+      "rev-kn-002"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      },
+      {
+        "name": "Worldmark Aerocity",
+        "distance": "2 km",
+        "type": "shopping"
+      },
+      {
+        "name": "Qutub Minar",
+        "distance": "8 km",
+        "type": "attraction"
+      }
+    ],
+    "tags": [
+      "value",
+      "airport",
+      "popular"
+    ],
+    "featured": true,
+    "popular": true,
+    "badges": [
+      "Popular"
+    ]
+  },
+  {
+    "id": "hotel-urban-luxury",
+    "slug": "hotel-urban-luxury",
+    "name": "Hotel Urban Luxury",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Mahipalpur, New Delhi - 110037",
+      "latitude": 28.553,
+      "longitude": 77.114
+    },
+    "starRating": 3,
+    "guestRating": 7.2,
+    "reviewCount": 968,
+    "priceFrom": 2799,
+    "currency": "INR",
+    "shortDescription": "A stylish 3-star transit hotel near Aerocity and IGI Airport featuring air-conditioned rooms and an in-house restaurant.",
+    "description": "Hotel Urban Luxury by JMD Group is a modern 3-star property in the Mahipalpur district, perfectly positioned for travellers seeking proximity to Aerocity and IGI Airport. The hotel features well-designed air-conditioned rooms, free Wi-Fi throughout, an in-house multi-cuisine restaurant and efficient room service. Its contemporary interiors and attentive service make it a popular choice for both business and leisure guests.",
+    "images": [
+      "assets/images/official/1-BaRo1f3H.png",
+      "assets/images/official/2-DSunFIiX.png",
+      "assets/images/official/3-DKipnxU0.png",
+      "assets/images/official/4-CTSaeHUa.png",
+      "assets/images/official/5-Dnkd4hJj.png",
+      "assets/images/official/6-7mjRZpZo.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "restaurant",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "breakfast",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "restaurant",
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-urban-luxury",
+      "deluxe-room-urban-luxury"
+    ],
+    "reviewIds": [
+      "rev-ul-001",
+      "rev-ul-002"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity",
+        "distance": "2 km",
+        "type": "business"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      },
+      {
+        "name": "Worldmark Aerocity",
+        "distance": "2 km",
+        "type": "shopping"
+      }
+    ],
+    "tags": [
+      "transit",
+      "airport",
+      "modern"
+    ],
+    "featured": true,
+    "popular": false,
+    "badges": [
+      "Great Location"
+    ]
+  },
+  {
+    "id": "hotel-paradise-international",
+    "slug": "hotel-paradise-international",
+    "name": "Hotel Paradise International",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "A-272, Swarna Jayanti Marg, Mahipalpur, New Delhi - 110037",
+      "latitude": 28.554,
+      "longitude": 77.1135
+    },
+    "starRating": 3,
+    "guestRating": 7,
+    "reviewCount": 754,
+    "priceFrom": 2299,
+    "currency": "INR",
+    "shortDescription": "A reliable 3-star hotel near IGI Airport with 24-hour reception, free parking and comfortable transit stays.",
+    "description": "Hotel Paradise International by JMD Group is a dependable 3-star property located on Swarna Jayanti Marg in Mahipalpur. Popular among business travellers for its transit-friendly facilities, the hotel offers a 24-hour front desk, free parking, comfortable rooms and proximity to IGI Airport and Worldmark Aerocity. A practical choice for guests seeking convenience and value near the airport.",
+    "images": [
+      "assets/images/hotels/hotel-paradise-international/exterior.jpg",
+      "assets/images/hotels/hotel-paradise-international/lobby.jpg",
+      "assets/images/hotels/hotel-paradise-international/room-1.jpg",
+      "assets/images/hotels/hotel-paradise-international/room-2.jpg"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-paradise",
+      "deluxe-room-paradise"
+    ],
+    "reviewIds": [
+      "rev-pi-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Worldmark Aerocity",
+        "distance": "2 km",
+        "type": "shopping"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      }
+    ],
+    "tags": [
+      "transit",
+      "airport",
+      "value"
+    ],
+    "featured": false,
+    "popular": true,
+    "badges": []
+  },
+  {
+    "id": "hotel-aerovilla",
+    "slug": "hotel-aerovilla",
+    "name": "Hotel Aerovilla",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Mahipalpur, New Delhi - 110037",
+      "latitude": 28.5525,
+      "longitude": 77.112
+    },
+    "starRating": 3,
+    "guestRating": 7.1,
+    "reviewCount": 612,
+    "priceFrom": 2599,
+    "currency": "INR",
+    "shortDescription": "A contemporary hotel for business and transit travellers, located near IGI Airport Terminal 3 and Aerocity.",
+    "description": "Hotel Aerovilla by JMD Group is a contemporary property designed for business and transit travellers seeking a comfortable stay near Indira Gandhi International Airport. Located in the Mahipalpur hospitality corridor, the hotel features modern rooms, essential business amenities and efficient service. Its strategic location provides easy access to Terminal 3, Aerocity and South Delhi.",
+    "images": [
+      "assets/images/official/img_1-CoEvdR7t.png",
+      "assets/images/official/img_2-DNbY2IKp.png",
+      "assets/images/official/img_3-DV_IIQ3I.png",
+      "assets/images/official/img_4-D292p8XU.png",
+      "assets/images/official/img_5-dbmBjpxA.png",
+      "assets/images/official/img_6-DzyNm6tj.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "breakfast",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-aerovilla",
+      "deluxe-room-aerovilla"
+    ],
+    "reviewIds": [
+      "rev-av-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "2.5 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity",
+        "distance": "2 km",
+        "type": "business"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      }
+    ],
+    "tags": [
+      "transit",
+      "airport",
+      "contemporary"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  },
+  {
+    "id": "hotel-palm-view",
+    "slug": "hotel-palm-view",
+    "name": "Hotel Palm View",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Mahipalpur, New Delhi - 110037",
+      "latitude": 28.5533,
+      "longitude": 77.1132
+    },
+    "starRating": 3,
+    "guestRating": 7,
+    "reviewCount": 523,
+    "priceFrom": 2199,
+    "currency": "INR",
+    "shortDescription": "A comfortable 3-star hotel offering leisure and business stays in a convenient Delhi location near the airport.",
+    "description": "Hotel Palm View by JMD Group is a welcoming 3-star property that caters to both leisure and business travellers. Situated in the Mahipalpur area, the hotel offers comfortable rooms with modern amenities, a friendly atmosphere and easy access to Delhi's major attractions and the international airport. A reliable choice for guests seeking a pleasant stay at competitive rates.",
+    "images": [
+      "assets/images/official/1-vp0mat9t.png",
+      "assets/images/official/2-BHVUxIwU.png",
+      "assets/images/official/3-D8boawVR.png",
+      "assets/images/official/4-HqW6mmmw.png",
+      "assets/images/official/5-BHj-_k5C.png",
+      "assets/images/official/6-BFj-4mLv.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "breakfast",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-palm-view",
+      "deluxe-room-palm-view"
+    ],
+    "reviewIds": [
+      "rev-pv-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2.5 km",
+        "type": "metro"
+      }
+    ],
+    "tags": [
+      "leisure",
+      "airport",
+      "value"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  },
+  {
+    "id": "hotel-good-luck",
+    "slug": "hotel-good-luck",
+    "name": "Hotel Good Luck",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "A103, Road Number 4, Block A, Mahipalpur Village, New Delhi - 110037",
+      "latitude": 28.5538,
+      "longitude": 77.1125
+    },
+    "starRating": 3,
+    "guestRating": 6.8,
+    "reviewCount": 389,
+    "priceFrom": 1999,
+    "currency": "INR",
+    "shortDescription": "An affordable hotel in the Mahipalpur–Aerocity corridor providing easy access to IGI Airport.",
+    "description": "Hotel Good Luck by JMD Group is a budget-friendly property in the Mahipalpur Village area, situated in the prime Mahipalpur–Aerocity corridor. The hotel provides clean, comfortable rooms with essential amenities, making it an ideal option for transit travellers and budget-conscious guests who need convenient airport access without compromising on basic comfort.",
+    "images": [
+      "assets/images/official/1-DGhpQ-i6.png",
+      "assets/images/official/2 (1)-BAgE6Lfm.png",
+      "assets/images/official/2-warYePV0.png",
+      "assets/images/official/5-CTpASPN_.png",
+      "assets/images/official/6-BGXhTRji.png",
+      "assets/images/official/7-CoSYxDaA.png",
+      "assets/images/official/8-BXdyAm5d.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-good-luck",
+      "deluxe-room-good-luck"
+    ],
+    "reviewIds": [
+      "rev-gl-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3.5 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity",
+        "distance": "2.5 km",
+        "type": "business"
+      }
+    ],
+    "tags": [
+      "budget",
+      "airport",
+      "transit"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  },
+  {
+    "id": "hotel-grand-regency",
+    "slug": "hotel-grand-regency",
+    "name": "Hotel Grand Regency",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Rangpuri, Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Near Gurgaon-Delhi Expressway, Rangpuri, Mahipalpur, New Delhi - 110037",
+      "latitude": 28.552,
+      "longitude": 77.11
+    },
+    "starRating": 3,
+    "guestRating": 7,
+    "reviewCount": 445,
+    "priceFrom": 2399,
+    "currency": "INR",
+    "shortDescription": "A well-located hotel near the Gurgaon-Delhi Expressway, offering comfortable stays for business travellers.",
+    "description": "Hotel Grand Regency by JMD Group is conveniently located near the Gurgaon-Delhi Expressway in the Rangpuri area of Mahipalpur. The hotel offers comfortable accommodation with modern amenities, making it suitable for business travellers commuting between Delhi and Gurgaon as well as transit guests heading to and from the airport.",
+    "images": [
+      "assets/images/official/1-h69h4z3Q.png",
+      "assets/images/official/2-DBS3oSgz.png",
+      "assets/images/official/3-_1NOKo2I.png",
+      "assets/images/official/4-DamV_8jU.png",
+      "assets/images/official/5-DLfHUnGh.png",
+      "assets/images/official/6-CX82ux5_.png"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "restaurant",
+      "room-service",
+      "air-conditioning",
+      "airport-transfer",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "restaurant",
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-grand-regency",
+      "deluxe-room-grand-regency"
+    ],
+    "reviewIds": [
+      "rev-gr-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "4 km",
+        "type": "airport"
+      },
+      {
+        "name": "Gurgaon-Delhi Expressway",
+        "distance": "0.5 km",
+        "type": "landmark"
+      },
+      {
+        "name": "DLF Cyber City, Gurgaon",
+        "distance": "10 km",
+        "type": "business"
+      }
+    ],
+    "tags": [
+      "business",
+      "expressway",
+      "transit"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  },
+  {
+    "id": "opal-villa",
+    "slug": "opal-villa",
+    "name": "Opal Villa",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur / Vasant Kunj",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Vasant Kunj Road, Mahipalpur, New Delhi - 110037",
+      "latitude": 28.5515,
+      "longitude": 77.1115
+    },
+    "starRating": 3,
+    "guestRating": 7.3,
+    "reviewCount": 298,
+    "priceFrom": 2899,
+    "currency": "INR",
+    "shortDescription": "A boutique villa-style accommodation near Mahipalpur offering a homely and private stay experience.",
+    "description": "Opal Villa by JMD Group is a distinctive villa-style accommodation located on Vasant Kunj Road in the Mahipalpur area. Offering a more intimate and homely experience compared to traditional hotels, Opal Villa features well-appointed rooms with modern amenities. Ideal for guests who prefer a quieter, more personal stay while still enjoying proximity to the airport and city attractions.",
+    "images": [
+      "assets/images/hotels/opal-villa/exterior.jpg",
+      "assets/images/hotels/opal-villa/lobby.jpg",
+      "assets/images/hotels/opal-villa/room-1.jpg",
+      "assets/images/hotels/opal-villa/room-2.jpg"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "breakfast",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-opal-villa",
+      "deluxe-room-opal-villa"
+    ],
+    "reviewIds": [
+      "rev-ov-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "4 km",
+        "type": "airport"
+      },
+      {
+        "name": "Vasant Kunj",
+        "distance": "2 km",
+        "type": "area"
+      },
+      {
+        "name": "DLF Promenade Mall",
+        "distance": "4 km",
+        "type": "shopping"
+      }
+    ],
+    "tags": [
+      "boutique",
+      "villa",
+      "quiet"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  },
+  {
+    "id": "hotel-jmk",
+    "slug": "hotel-jmk",
+    "name": "Hotel JMK",
+    "brand": "JMD Group of Hotels",
+    "location": {
+      "city": "New Delhi",
+      "area": "Mahipalpur",
+      "state": "Delhi",
+      "country": "India",
+      "address": "Mahipalpur, New Delhi - 110037",
+      "latitude": 28.5542,
+      "longitude": 77.1138
+    },
+    "starRating": 3,
+    "guestRating": 6.9,
+    "reviewCount": 356,
+    "priceFrom": 2099,
+    "currency": "INR",
+    "shortDescription": "A practical hotel in Mahipalpur offering comfortable rooms and good connectivity to IGI Airport.",
+    "description": "Hotel JMK by JMD Group is a practical and well-maintained property in the Mahipalpur area. The hotel provides comfortable rooms with modern amenities, making it a solid choice for travellers seeking a straightforward, value-oriented stay near IGI Airport. With efficient service and a convenient location, Hotel JMK serves as a dependable option for transit and business guests.",
+    "images": [
+      "assets/images/hotels/hotel-jmk/exterior.jpg",
+      "assets/images/hotels/hotel-jmk/lobby.jpg",
+      "assets/images/hotels/hotel-jmk/room-1.jpg"
+    ],
+    "amenities": [
+      "free-wifi",
+      "parking",
+      "room-service",
+      "air-conditioning",
+      "laundry",
+      "24hr-reception"
+    ],
+    "facilities": [
+      "parking",
+      "elevator",
+      "power-backup"
+    ],
+    "roomIds": [
+      "standard-room-jmk",
+      "deluxe-room-jmk"
+    ],
+    "reviewIds": [
+      "rev-jmk-001"
+    ],
+    "nearbyPlaces": [
+      {
+        "name": "IGI Airport Terminal 3",
+        "distance": "3 km",
+        "type": "airport"
+      },
+      {
+        "name": "Aerocity Metro Station",
+        "distance": "2 km",
+        "type": "metro"
+      }
+    ],
+    "tags": [
+      "value",
+      "airport",
+      "transit"
+    ],
+    "featured": false,
+    "popular": false,
+    "badges": []
+  }
+]

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels — JMD Group of Hotels</title>
+  <meta name="description"
+    content="Browse and book hotels from the JMD Group of Hotels. Filter by price, star rating, amenities and more. Properties near IGI Airport, Mahipalpur &amp; Aerocity, New Delhi.">
+  <link rel="canonical" href="https://jmdgrouphotels.com/hotels">
+  <link rel="icon" type="image/webp" href="assets/brand/logo.webp">
+  <meta property="og:title" content="Hotels — JMD Group of Hotels">
+  <meta property="og:description" content="Browse 7+ premium hotel properties near Delhi Airport.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .hotels-page {
+      padding-top: var(--header-height);
+      background: #f4f6fa;
+      min-height: 100vh;
+    }
+
+    .hotels-page__search {
+      background: #00224f;
+      padding: var(--space-lg) 0;
+      border-bottom: 2px solid var(--color-secondary);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .hotels-page__layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--space-2xl);
+      padding: var(--space-2xl) 0;
+    }
+
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      background: #ffffff;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 2px 8px rgba(0, 53, 128, 0.04);
+    }
+
+    .results-header__info h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #00224f;
+      margin-bottom: 2px;
+    }
+
+    .results-header__info p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+
+    .results-header__sort {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .results-header__sort label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: #1f2937;
+      white-space: nowrap;
+    }
+
+    .results-header__sort select {
+      padding: 6px 30px 6px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border-color: var(--color-border);
+      border-radius: 6px;
+    }
+
+    .hotel-results {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .filter-toggle,
+    .sort-toggle {
+      display: none;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 10px 20px;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      cursor: pointer;
+    }
+
+    .mobile-controls {
+      display: none;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header header--scrolled" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="JMD Group of Hotels - Home">
+        <img src="assets/brand/logo.webp" alt="JMD Group of Hotels Logo" class="header__logo-img">
+        <div class="header__logo-text">
+          JMD Group
+          <span>of Hotels</span>
+        </div>
+      </a>
+      <!-- Single Unified Responsive Menu -->
+      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+        <div class="header__nav-drawer-head">
+          <div class="header__nav-drawer-brand">
+            <img src="assets/brand/logo.webp" alt="JMD Logo">
+            <div>
+              <div style="font-weight:700;color:#fff;font-size:15px">JMD Group</div>
+              <div style="font-size:11px;color:var(--color-secondary);font-weight:500">of Hotels · New Delhi</div>
+            </div>
+          </div>
+          <button type="button" class="header__nav-close" aria-label="Close menu">&times;</button>
+        </div>
+
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="hotels.html" class="header__nav-link header__nav-link--active">Hotels</a></li>
+          <li><a href="about.html" class="header__nav-link">About</a></li>
+          <li><a href="offers.html" class="header__nav-link">Offers</a></li>
+          <li><a href="experiences.html" class="header__nav-link">Experiences</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+
+        <div class="header__nav-drawer-footer">
+          <a href="my-booking.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+            My Booking
+          </a>
+          <a href="favorites.html" class="header__nav-drawer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            Saved Hotels
+          </a>
+          <a href="hotels.html" class="btn btn-primary" style="width:100%;margin-top:6px;text-align:center">Book Now</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="my-booking.html" class="header__booking-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="display:inline-block;vertical-align:-1px;margin-right:4px">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+          My Booking
+        </a>
+        <a href="hotels.html" class="btn btn-primary header__book-btn">Book Now</a>
+        <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header__nav-overlay" aria-hidden="true"></div>
+
+  <main class="hotels-page">
+    <!-- Elevated Search Bar (Booking.com Travel Style) -->
+    <div class="hotels-page__search"
+      style="padding-top: calc(var(--header-height-scrolled) + 24px); padding-bottom: 24px; background: linear-gradient(180deg, #003580 0%, #ffffff 100%); border-bottom: 1px solid #e2e8f0;">
+      <div class="container">
+        <div class="search-widget__inner" style="margin: 0 auto; max-width: 100%;">
+          <!-- Perks & Guarantees Strip -->
+          <div class="search-widget__perks-bar">
+            <div class="search-widget__perk-item">
+              <span class="search-widget__perk-dot"></span>
+              <span class="search-widget__perk-badge">Official Booking</span>
+              <span>Best Price Guarantee &middot; Extra 15% Off (Code: <strong>WELCOME10</strong>)</span>
+            </div>
+            <div class="search-widget__perk-item search-widget__perk-item--desktop">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path
+                  d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+              </svg>
+              Free Delhi Airport Transfers
+            </div>
+            <div class="search-widget__perk-item search-widget__perk-item--desktop">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Pay at Hotel &middot; Zero Booking Fee
+            </div>
+          </div>
+
+          <form class="search-widget__form" id="search-form">
+            <div class="search-widget__field search-widget__field--destination">
+              <label class="search-widget__label" for="search-destination">Destination / Hotel</label>
+              <svg class="search-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <input type="text" class="search-widget__input" id="search-destination" placeholder="Where are you going?"
+                autocomplete="off" aria-label="Search destination">
+              <div class="search-dropdown" id="destination-dropdown" role="listbox"></div>
+            </div>
+
+            <div class="search-widget__field search-widget__field--checkin">
+              <label class="search-widget__label" for="search-checkin">Check-in Date</label>
+              <svg class="search-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              <input type="text" class="search-widget__input" id="search-checkin" placeholder="Select date" readonly
+                aria-label="Check-in date">
+              <div class="datepicker" id="checkin-datepicker"></div>
+            </div>
+
+            <div class="search-widget__field search-widget__field--checkout">
+              <label class="search-widget__label" for="search-checkout">Check-out Date</label>
+              <svg class="search-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              <input type="text" class="search-widget__input" id="search-checkout" placeholder="Select date" readonly
+                aria-label="Check-out date">
+              <div class="datepicker" id="checkout-datepicker"></div>
+            </div>
+
+            <div class="search-widget__field search-widget__field--guests">
+              <label class="search-widget__label" for="search-guests">Guests &amp; Rooms</label>
+              <svg class="search-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+              </svg>
+              <input type="text" class="search-widget__input" id="search-guests" placeholder="2 adults · 1 room"
+                readonly aria-label="Guests and rooms">
+              <div class="guest-selector" id="guest-selector"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary search-widget__btn" id="search-submit-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <span>Search Hotels</span>
+            </button>
+          </form>
+
+          <!-- Quick Interactive Popular Tags -->
+          <div class="search-widget__quick-tags">
+            <span class="search-widget__quick-label">Popular:</span>
+            <button type="button" class="search-widget__quick-chip" data-dest="IGI Airport">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+              </svg>
+              Near Airport Terminal 3
+            </button>
+            <button type="button" class="search-widget__quick-chip" data-dest="Aerocity">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Aerocity Metro
+            </button>
+            <button type="button" class="search-widget__quick-chip" data-dest="Mahipalpur">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Mahipalpur Hub
+            </button>
+            <button type="button" class="search-widget__quick-chip" data-dest="Vasant Kunj">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Vasant Kunj
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hotels-page__layout">
+        <!-- Elevated Filters Sidebar -->
+        <aside>
+          <div class="filter-overlay" id="filter-overlay"></div>
+          <div class="filters" id="filter-panel" role="complementary" aria-label="Hotel filters">
+            <button class="filters__close-mobile" id="filter-close" aria-label="Close filters">&times;</button>
+            <!-- Rendered by filters.js -->
+          </div>
+        </aside>
+
+        <!-- Results List -->
+        <div>
+          <div class="results-header">
+            <div class="results-header__info">
+              <h1 id="results-title">Hotels in Delhi NCR</h1>
+              <p id="results-count">Showing verified properties</p>
+            </div>
+            <div class="results-header__sort">
+              <label for="sort-select">Sort by:</label>
+              <select class="form-select" id="sort-select" style="width:auto">
+                <option value="recommended">Recommended &amp; Top Rated</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Guest Rating</option>
+                <option value="stars">Star Rating</option>
+                <option value="reviews">Most Reviewed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mobile-controls">
+            <button class="filter-toggle" id="filter-toggle-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+              </svg>
+              Filters
+            </button>
+            <select class="form-select sort-toggle" id="sort-select-mobile" style="flex:1;display:block">
+              <option value="recommended">Recommended</option>
+              <option value="price-asc">Price — Low to High</option>
+              <option value="price-desc">Price — High to Low</option>
+              <option value="rating">Guest Rating</option>
+              <option value="stars">Star Rating</option>
+              <option value="reviews">Most Reviewed</option>
+            </select>
+          </div>
+
+          <div class="hotel-results" id="hotel-results">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RICH FOOTER (BOOKING.COM STYLE) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__trust-bar">
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Best Price Guarantee</div>
+            <div class="footer__trust-desc">Direct booking perks &amp; instant savings</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">Free Airport Transfers</div>
+            <div class="footer__trust-desc">IGI Airport T1, T2 &amp; T3 connectivity</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">24/7 Front Desk</div>
+            <div class="footer__trust-desc">Round-the-clock concierge &amp; room service</div>
+          </div>
+        </div>
+        <div class="footer__trust-item">
+          <div class="footer__trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <div>
+            <div class="footer__trust-title">100% Secure Booking</div>
+            <div class="footer__trust-desc">Instant confirmation · Zero hidden charges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <img src="assets/brand/logo.webp" alt="JMD Group of Hotels" class="footer__logo-img">
+            <div>
+              <div class="footer__brand-title">JMD Group</div>
+              <span class="footer__brand-subtitle">of Hotels · New Delhi</span>
+            </div>
+          </div>
+          <p class="footer__description">JMD Group of Hotels offers premier hospitality experiences with handpicked
+            boutique &amp; luxury properties near Indira Gandhi International Airport, Mahipalpur and Aerocity, New
+            Delhi.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/919319366279" target="_blank" rel="noopener" class="footer__social-link"
+              aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.777.781 2.791.781 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.767-5.768-5.767zm7.545 5.766c-.001 4.159-3.385 7.544-7.545 7.544-1.29 0-2.529-.333-3.618-.948l-4.413 1.157 1.178-4.303c-.694-1.127-1.062-2.433-1.062-3.75 0-4.16 3.384-7.545 7.544-7.545 4.161.001 7.544 3.385 7.544 7.545z" />
+              </svg>
+            </a>
+            <a href="tel:+919319366279" class="footer__social-link" aria-label="Call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </a>
+            <a href="mailto:info@jmdgrouphotels.com" class="footer__social-link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Company</h4>
+          <a href="about.html" class="footer__link">About JMD Group</a>
+          <a href="hotels.html" class="footer__link">Our Hotels</a>
+          <a href="offers.html" class="footer__link">Special Offers</a>
+          <a href="experiences.html" class="footer__link">Dining &amp; Experiences</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">Destinations</h4>
+          <a href="hotels.html?destination=Mahipalpur" class="footer__link">Hotels near IGI Airport</a>
+          <a href="hotels.html?destination=Aerocity" class="footer__link">Aerocity Luxury Stays</a>
+          <a href="hotels.html?destination=Delhi" class="footer__link">South Delhi Hotels</a>
+          <a href="hotels.html" class="footer__link">All 7+ Properties</a>
+        </div>
+
+        <div>
+          <h4 class="footer__column-title">24/7 Assistance</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </span>
+            <span><strong>Reservations &amp; Enquiries:</strong><br>+91-9319366279</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <span>info@jmdgrouphotels.com</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <span>Mahipalpur, Near IGI Airport, New Delhi - 110037</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">© 2026 JMD Group of Hotels. All Rights Reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="my-booking.html" class="footer__bottom-link">Manage Booking</a>
+          <a href="faq.html" class="footer__bottom-link">FAQ</a>
+          <a href="contact.html" class="footer__bottom-link">Privacy Policy</a>
+          <a href="contact.html" class="footer__bottom-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Hotels List module
+    JMD.HotelsList = {
+      async init() {
+        JMD.Search.init();
+        JMD.Filters.init();
+        this.bindMobileFilters();
+        this.bindMobileSort();
+        await this.loadResults();
+      },
+
+      async loadResults() {
+        const params = JMD.Utils.getURLParams();
+        const query = {
+          destination: params.destination || '',
+          sort: JMD.Filters.state.sort,
+          stars: JMD.Filters.state.stars,
+          minRating: JMD.Filters.state.minRating,
+          maxPrice: JMD.Filters.state.maxPrice >= 10000 ? undefined : JMD.Filters.state.maxPrice,
+          amenities: JMD.Filters.state.amenities
+        };
+
+        const hotels = await JMD.Data.searchHotels(query);
+        this.renderResults(hotels);
+
+        // Update title
+        const title = document.getElementById('results-title');
+        if (title) {
+          title.textContent = params.destination
+            ? `Hotels in ${params.destination}`
+            : 'All Hotels & Properties';
+        }
+      },
+
+      renderResults(hotels) {
+        const container = document.getElementById('hotel-results');
+        const countEl = document.getElementById('results-count');
+
+        if (!container) return;
+
+        if (countEl) {
+          countEl.textContent = `${hotels.length} ${hotels.length === 1 ? 'property' : 'properties'} found near Delhi Airport`;
+        }
+
+        if (hotels.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center;padding:var(--space-3xl);background:#fff;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 4px 12px rgba(0,53,128,0.04)">
+              <div style="width:56px;height:56px;border-radius:50%;background:#e8f2fd;color:#006ce4;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-md) auto">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-sm);color:#00224f">No matching properties found</h3>
+              <p style="color:var(--color-text-secondary);margin-bottom:var(--space-lg)">Try adjusting your filters or price range to find available rooms.</p>
+              <button class="btn btn-primary" onclick="document.getElementById('clear-filters').click()">Reset All Filters</button>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = hotels.map(h => JMD.App.renderHotelCard(h)).join('');
+      },
+
+      bindMobileFilters() {
+        const toggleBtn = document.getElementById('filter-toggle-btn');
+        const panel = document.getElementById('filter-panel');
+        const overlay = document.getElementById('filter-overlay');
+
+        if (!toggleBtn || !panel) return;
+
+        const openFilters = () => {
+          panel.classList.add('filters--open');
+          if (overlay) overlay.classList.add('filter-overlay--visible');
+          document.body.style.overflow = 'hidden';
+        };
+
+        const closeFilters = () => {
+          panel.classList.remove('filters--open');
+          if (overlay) overlay.classList.remove('filter-overlay--visible');
+          document.body.style.overflow = '';
+        };
+
+        toggleBtn.addEventListener('click', openFilters);
+        if (overlay) overlay.addEventListener('click', closeFilters);
+
+        // Delegation: whenever close button or apply button is clicked inside panel
+        panel.addEventListener('click', (e) => {
+          if (e.target.closest('#filter-close') || e.target.closest('#filter-apply-btn')) {
+            closeFilters();
+          }
+        });
+      },
+
+      bindMobileSort() {
+        const mobileSort = document.getElementById('sort-select-mobile');
+        if (!mobileSort) return;
+
+        mobileSort.addEventListener('change', (e) => {
+          JMD.Filters.state.sort = e.target.value;
+          const desktopSort = document.getElementById('sort-select');
+          if (desktopSort) desktopSort.value = e.target.value;
+          JMD.Filters.applyFilters();
+        });
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      JMD.HotelsList.init();
+    });
+  </script>
+</body>
+
+</html>
